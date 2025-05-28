@@ -1,0 +1,661 @@
+/* ===========================
+  1) RESET + BASE TYPOGRAPHY
+   ===========================
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/*hero*/
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+header .header-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+header h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  margin-top: 200px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header .tagline {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+header .subtext {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 2px 0;
+}
+/* ===========================  
+  2) NAVIGATION BAR
+   ===========================
+ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 999;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+nav .logo a{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  color: lightgrey;
+}
+
+nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+  text-decoration: underline;
+  color: #ac90ff;
+}
+
+/* Navbar when scrolled past header */
+nav.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav.scrolled .nav-links a,
+nav.scrolled .logo {
+  color: #181818;
+}
+
+.section {
+  padding: 40px 20px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /*scrolled past header*/
+nav.scrolled {
+  background: white;      /* make the navbar background light */
+}
+
+  /* switch links to dark */
+nav.scrolled a {
+  color: black;
+}
+/* ======================
+ 3) IBTS HEADER
+  ======================== */
+header.ibts-header {
+  background: url('assets/ibts_app.gif') center/cover no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5% 5%;
+  min-height: 350px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.ibts-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ibts-text {
+  flex: 0 0 380px;
+  max-width: 380px;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 4vw;
+}
+
+.ibts-text h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  text-align: left;
+  align-self: flex-start;
+  text-shadow: none;
+}
+
+.ibts-text .label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.ibts-text .value {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.ibts-text hr {
+  border: none;
+  border-top: 1px solid rgba(94, 94, 94, 0.2);
+  margin: 0 0 1.25rem 0;
+}
+
+.ibts-text hr:last-of-type {
+  display: none;
+}
+
+/* ============================
+    4) PROJECTS
+  =============================
+   */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.project.normal {
+  flex-direction: row;
+}
+
+.project.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-text {
+  flex: 1 1 45%;
+  max-width: 360px;
+}
+
+.project-img {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.project-img img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.project-img img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*buttons*/
+a.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  color: #443674;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+a.button:hover {
+  color: #2c2555;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.button .arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.button:hover .arrow {
+  transform: translateX(4px);
+}
+
+
+/* =============================
+    5) IBTS CASE STUDY
+   =============================
+     */
+     /* _____________________________________
+        5a) Base card style for every section
+        _____________________________________
+      */
+.ibts-case-section {
+  padding: 80px 100px 60px;
+  max-width: 1200px;
+  margin: 50px auto;
+  background: #fff;
+  box-shadow: 0 4px 32px rgba(68,54,116,0.07);
+  margin-bottom: 40px;
+}
+/* ______________________________________
+    5b) Hero row
+   _____________________________________
+   */
+.ibts-case-section.case-hero {
+  width: 100%;
+  background: #f3f1fa;      /* light grey from your example */
+  padding: 60px 5vw;
+  margin: 50px auto;
+}
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+/* Left & right column inherit the case‐section styles for h2/h3/p */
+.case-hero-left,
+.case-hero-right {
+  text-align: left;
+}
+.case-hero-left h2 {
+  margin-bottom: 0.5rem;
+}
+.case-hero-left p {
+  margin-bottom: 1.5rem;
+}
+.case-hero-right h3 {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.case-hero-right p {
+  line-height: 1.65;
+}
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+.case-hero-grid {
+  align-items: start;           
+}
+.case-hero-left,
+.case-hero-right {
+  align-self: start;            
+}
+.case-hero-left > h2,
+.case-hero-right > h3 {
+  margin-block-start: 0;        
+}
+.ibts-case-section h2 {
+  font-size: 2rem;
+  color: #8e8e8e;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.ibts-case-section h3 {
+  font-size: 1.2rem;
+  color: #181818;
+  margin: 32px 0 12px;
+  font-style: italic;
+}
+.ibts-case-section p, .ibts-case-section ul {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+.ibts-case-section ul {
+  padding-left: 1.2em;
+}
+.ibts-case-section .img-placeholder, .ibts-case-section img {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 220px;
+  background: #f3f1fa;
+  margin: 32px auto 32px auto;
+  display: block;
+  box-shadow: 0 2px 12px rgba(68,54,116,0.06);
+  object-fit: cover;
+}
+.ibts-case-section .img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b3a7d6;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* ==============================
+    5c) Key Findings
+  ==============================
+   */
+.ibts-case-section.key-findings .quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ibts-case-section.key-findings .quote {
+  max-width: 60%;
+  padding: 1rem 1.5rem;
+  background-color: #3B82F6;    /* blue-500 */
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  line-height: 1.4;
+}
+
+/* stagger left vs right */
+.ibts-case-section.key-findings .quote.left {
+  margin-right: auto;
+}
+.ibts-case-section.key-findings .quote.right {
+  margin-left: auto;
+}
+
+/* full-width on small screens */
+@media (max-width: 600px) {
+  .ibts-case-section.key-findings .quote {
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
+}
+
+/* ============================
+    5d) DESIGN PROCESS
+   =============================
+     */
+/* ——————————————————————————————
+   5d) DESIGN PROCESS (black bg, white text)
+   —————————————————————————————— */
+.ibts-case-section.design-process {
+  background-color: #1b1b1b !important; /* force black bg */
+  color: #fff;                          /* default text white */
+  padding: 3rem 5vw;
+}
+
+/* Section heading */
+.ibts-case-section.design-process h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* process wrapper: flex layout if you have multiple steps */
+.ibts-case-section.design-process .process {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* each individual step bubble/card */
+.ibts-case-section.design-process .step {
+  flex: 1 1 calc(50% - 1.5rem); /* two columns, or adjust as needed */
+  background: #262626;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* list inside each step */
+.ibts-case-section.design-process .step ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ibts-case-section.design-process .step li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #eee; /* slightly softer white for body copy */
+}
+
+/* strong text */
+.ibts-case-section.design-process .step li strong {
+  color: #fff;
+}
+
+/* Responsive: stack steps on small screens */
+@media (max-width: 768px) {
+  .ibts-case-section.design-process .process {
+    flex-direction: column;
+  }
+  .ibts-case-section.design-process .step {
+    flex: 1 1 100%;
+  }
+}
+
+
+/* ===========================
+    ABOUT PAGE
+   =========================== */
+.about-header {
+  background: #181818;
+  color: #fff;
+  padding: 120px 0 60px 0;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-header p {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+/* ====================================
+  6) RESPONSIVE BREAKPOINTS
+    ===================================
+*/
+
+@media (max-width: 900px) {
+  .ibts-case-section {
+    padding: 48px 8vw 36px;
+    max-width: 98vw;
+  }
+  .ibts-case-section .img-placeholder, .ibts-case-section img {
+    max-width: 98vw;
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ibts-case-section {
+    padding: 32px 2vw 24px;
+    border-radius: 8px;
+  }
+  .ibts-case-section h2 {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 800px) {
+  .case-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+}
+
+/*mobile view*/
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .project-text {
+  width: 100%;
+  padding: 0 10px;
+  text-align: left;
+}
+.project-img img {
+  max-width: 90%;
+  margin: 20px auto 0;
+}
+
+  nav .nav-links {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header .tagline {
+    font-size: 14px;
+  }
+
+  header .subtext {
+    font-size: 14px;
+  }
+}
+/* ================================
+   7) FOOTER
+   ================================ */
+footer {
+  background: #fff;
+  padding: 60px 5vw;
+  text-align: center;
+}
+
+/* Intro line */
+footer .footer-intro {
+  margin-bottom: 40px;
+}
+footer .footer-intro p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Middle columns */
+footer .footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+footer .footer-section {
+  max-width: 250px;
+}
+footer .footer-section h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+footer .footer-section p {
+  font-size: 1rem;
+  color: #333;
+}
+footer .footer-section a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer .footer-section a:hover {
+  color: #443674;
+}
+
+/* Bottom row */
+footer .footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janelle Lee</title>
+<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <nav id="main-nav">
+    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Work</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <header>
+  <video autoplay muted loop playsinline>
+    <source src="assets/background.mp4" type="video/mp4" />
+  </video>
+  <div class="header-content">
+    <h1>Janelle Lee</h1>
+    <p class="tagline">Product Designer</p>
+    <p class="subtext">UX/UI Designer & Visual Storyteller</p>
+    <p class="subtext">Previously @ Inns by the Sea</p>
+  </div>
+</header>
+
+  <div class="section">
+    <div class="project reverse">
+      <div class="project-text scroll-fade">
+        <h2>A New Take on a Classic Experience</h2>
+        <p>Crafting an intuitive, beautiful, and engaging experience to help users book a vacation in Carmel-by-the-Sea or Half Moon Bay.</p>
+        <a href="ibts_mobile_app.html" class="button">VIEW PROJECT <span class="arrow">→</span></a>
+      </div>
+      <div class="project-img scroll-fade">
+        <img src="assets/ibts_app.gif" alt="Mobile App" class="scroll-thumb visible" />
+      </div>
+    </div>
+
+    <div class="project normal">
+      <div class="project-text scroll-fade">
+        <h2>Updating the Function and Flow</h2>
+        <p>Improving booking site functionality and engagement across Inns by the Sea properties.</p>
+        <a href="#" class="button">VIEW PROJECT <span class="arrow">→</span></a>
+      </div>
+      <div class="project-img scroll-fade">
+        <img src="assets/redesign.png" alt="Website Redesign" class="scroll-thumb visible" />
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-intro">
+    <p>Thanks for stopping by, let's chat! 👋</p>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>CONTACT ME</h4>
+      <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h4>LET'S CONNECT</h4>
+      <p>
+        <a href="https://linkedin.com">LinkedIn</a> |
+        <a href="#">Resume</a> |
+        <a href="#">Work</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Janelle Weinert</p>
+    <p>Made with 💛 & ☕</p>
+  </div>
+</footer>
+
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
+  observer.observe(el);
+});
+  </script>
+  <script>
+    const nav = document.getElementById('main-nav');
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

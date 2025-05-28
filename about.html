@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Janelle Lee</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <nav id="main-nav">
+    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Work</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <header class="about-header scroll-fade">
+    <h1>About Me</h1>
+    <p>Designer. Problem Solver. Curious Thinker.</p>
+  </header>
+
+  <div class="section">
+    <div class="about-section scroll-fade">
+      <h2>Bio</h2>
+      <p>I'm a designer passionate about creating intuitive and meaningful user experiences. My background spans graphic design, UX/UI, and branding. I believe in the power of storytelling through visuals and thoughtful interactions.</p>
+    </div>
+
+    <div class="about-section scroll-fade">
+      <h2>Values</h2>
+      <ul>
+        <li><strong>Empathy:</strong> Designing with the user's needs and feelings in mind.</li>
+        <li><strong>Curiosity:</strong> Constantly learning and exploring new approaches.</li>
+        <li><strong>Craft:</strong> Caring about the small details that make a big difference.</li>
+      </ul>
+    </div>
+
+    <div class="about-section scroll-fade">
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Visual Design</strong> – Inns by the Sea (2025)</li>
+        <li><strong>UX Design</strong> – Freelance & Contract Work (2021–2023)</li>
+        <li><strong>B.S. Communication Design</strong> – California State University of Monterey Bay (Class of 2024)</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-intro">
+    <p>Thanks for stopping by, let's chat! 👋</p>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>CONTACT ME</h4>
+      <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h4>LET'S CONNECT</h4>
+      <p>
+        <a href="https://linkedin.com">LinkedIn</a> |
+        <a href="#">Resume</a> |
+        <a href="#">Work</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Janelle Weinert</p>
+    <p>Made with 💛 & ☕</p>
+  </div>
+</footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.scroll-fade').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+  <script>
+    const nav = document.getElementById('main-nav');
+    const header = document.querySelector('header.ibts-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
