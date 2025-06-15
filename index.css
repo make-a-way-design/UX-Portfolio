@@ -49,6 +49,7 @@ header .header-content {
   position: relative;
   z-index: 1;
   color: white;
+  text-shadow:rgba(0, 0, 0, 0.15)
 }
 
 header h1 {
@@ -195,7 +196,7 @@ header.ibts-header {
   line-height: 1.2;
   text-align: left;
   align-self: flex-start;
-  text-shadow: none;
+  text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 .ibts-text .label {

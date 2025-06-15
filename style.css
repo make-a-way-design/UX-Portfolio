@@ -1,0 +1,242 @@
+/* ===========================  
+  2) NAVIGATION BAR
+   ===========================
+ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 999;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+nav .logo a{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  color: lightgrey;
+}
+
+nav .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+  text-decoration: underline;
+  color: #ac90ff;
+}
+
+/* Navbar when scrolled past header */
+nav.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav.scrolled .nav-links a,
+nav.scrolled .logo {
+  color: #181818;
+}
+
+.section {
+  padding: 40px 20px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /*scrolled past header*/
+nav.scrolled {
+  background: white;      /* make the navbar background light */
+}
+
+  /* switch links to dark */
+nav.scrolled a {
+  color: black;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+header.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.4);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.comparison-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.comparison-images img {
+  width: 100%;
+  max-width: 48%;
+  border-radius: 8px;
+}
+
+
+
+/* ================================
+   7) FOOTER
+   ================================ */
+footer {
+  background: #fff;
+  padding: 60px 5vw;
+  text-align: center;
+}
+
+/* Intro line */
+footer .footer-intro {
+  margin-bottom: 40px;
+}
+footer .footer-intro p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Middle columns */
+footer .footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+footer .footer-section {
+  max-width: 250px;
+}
+footer .footer-section h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+footer .footer-section p {
+  font-size: 1rem;
+  color: #333;
+}
+footer .footer-section a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer .footer-section a:hover {
+  color: #443674;
+}
+
+/* Bottom row */
+footer .footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.ibts-case-section video {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  object-fit: contain; /* override cover or full fill */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comparison-images {
+    flex-direction: column;
+  }
+
+  .comparison-images img {
+    max-width: 100%;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+  }
+}

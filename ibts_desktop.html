@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inns by the Sea – Website Redesign</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <nav id="main-nav">
+    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <!-- <a href="portfolio.html">Work</a> -->
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <header>
+    <video autoplay muted loop playsinline>
+      <source src="assets/ibts_desktop_mobile.mp4" type="video/mp4">
+    </video>
+    <div class="header-content">
+      <h1>Inns by the Sea</h1>
+      <p class="tagline">Landing Page Website Redesign</p>
+      <p class="subtext">Modernizing the digital experience for a luxury coastal brand</p>
+    </div>
+  </header>
+
+  <section class="ibts-case-section case-hero scroll-fade">
+    <div class="case-hero-grid">
+      <div class="case-hero-left">
+        <h2>Overview</h2>
+        <p>This project focused on redesigning the desktop and mobile landing pages for Inns by the Sea. My goal was to create a more visually engaging, intuitive experience that encourages browsing, builds trust, and improves booking conversion.</p>
+        <h3>⚡️ The Challenge:</h3>
+        <p>Balancing style with an efficient user experience</p> 
+    </div>
+      <div class="case-hero-right">
+        <h3>Role & Scope</h3>
+        <p>I led the redesign of the homepage layout, including visual direction, user flow enhancements, and custom modules for property browsing, offers, and gift certificates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+    <h2>Design Goals</h2>
+    <ul>
+      <li>Modernize the visual identity and layout</li>
+      <li>Introduce a carousel to explore properties like Carriage House and Cypress Inn</li>
+      <li>Feature the Romantic Getaway Package as a key marketing hook</li>
+      <li>Make gift certificates and partner restaurants easily accessible and visible to guests</li>
+    </ul>
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+    <h2>Before</h2>
+    <img src="assets/ibts_old_website.png" alt="Old Inns by the Sea website" />
+    <h2>After</h2>
+    <img src="assets/ibts_new_redesign.png" alt="New redesigned homepage" />
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+    <h2>Final Designs</h2>
+    <video autoplay muted loop playsinline
+        style="max-width: 1200px; width: 150%; display: block; margin: 2rem auto; border-radius: 12px; object-fit: contain;">
+      <source src="assets/website_redesign_final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Property Carousel:</strong> Allows guests to browse the Carriage House, Candle Light Inn, Wayside Inn, and Cypress Inn directly from the landing page.</li>
+      <li><strong>Romantic Getaway Package:</strong> Elevated placement and CTA encourages special occasion bookings.</li>
+      <li><strong>Partner Restaurants:</strong> Highlighted to reinforce local charm and partnership value.</li>
+      <li><strong>Gift Certificates:</strong> Quickly accessible for those buying travel gifts.</li>
+    </ul>
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+    <h2>Why This Is an Improvement</h2>
+    <p>The old landing page lacked hierarchy, had outdated visuals, and did not showcase all the Inns. This redesign improves content visibility, modernizes aesthetics, and creates a more delightful and useful experience for prospective travelers.</p>
+  </section>
+
+  <section class="ibts-case-section scroll-fade">
+      <img src="assets/IBTS_Desktop_homepage2.png" alt="Full page screenshot of redesigned website" />
+  </section>
+
+  <footer>
+    <div class="footer-intro">
+      <p>Thanks for stopping by, let's chat! 👋</p>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CONTACT ME</h4>
+        <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>LET'S CONNECT</h4>
+        <p>
+          <!-- <a href="https://linkedin.com">LinkedIn</a> | -->
+          <a href="https://drive.google.com/file/d/1yOcMAamEKoOBXIvHaIvhsAObU5SiDlce/view?usp=sharing" target="_blank">Resume</a> |
+          <!-- <a href="#">Work</a> -->
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Janelle Weinert</p>
+      <p>Made with 💛 & ☕</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
+      observer.observe(el);
+    });
+
+    const nav = document.getElementById('main-nav');
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
