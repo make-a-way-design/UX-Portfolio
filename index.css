@@ -534,6 +534,20 @@ a.button:hover {
   color: #ffffff;
   margin-bottom: 0;
 }
+/*=============================
+    IBTS WEBSITE REDESIGN PAGE
+    ============================
+      */
+.ibts-case-section video {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  object-fit: contain; /* override cover or full fill */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
 /* ====================================
   6) RESPONSIVE BREAKPOINTS

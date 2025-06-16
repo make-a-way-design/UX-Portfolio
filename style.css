@@ -239,4 +239,9 @@ footer .footer-bottom {
   .overlay h1 {
     font-size: 2rem;
   }
+
+  .ibts-case-section video {
+    max-width: 100%;
+    height: auto;
+  }
 }
