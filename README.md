@@ -24,7 +24,7 @@ Hi there! I’m Janelle, a passionate UX/UI Designer focused on crafting beautif
 
 ### 🌐 Portfolio
 
-Check out my work: [make-a-way-design.github.io/janelle-portfolio](https://make-a-way-design.github.io/janelle-portfolio/#)
+Check out my work: [make-a-way-design.github.io/janelle-portfolio](https://janellee.com/)
 
 ---
 
