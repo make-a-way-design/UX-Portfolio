@@ -232,6 +232,7 @@ header.ibts-header {
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
+  border-left: 6px solid #f5b8c0
 }
 
 .project.normal {
