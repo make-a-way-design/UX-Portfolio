@@ -225,6 +225,50 @@ footer .footer-bottom {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/*=======================
+  ABOUT PAGE PROJECT CARDS
+=========================
+*/
+.project-card {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #111;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.card-details {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
