@@ -720,3 +720,18 @@ footer .footer-bottom {
   font-size: 0.9rem;
   color: #aaa;
 }
+/* ============
+    Page Transitions
+  ==================== 
+  */
+/* Page transition styles */
+body {
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+

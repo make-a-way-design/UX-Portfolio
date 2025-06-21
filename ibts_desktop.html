@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+    <div id="transition-wrapper" class="transition-wrapper"></div>
   <nav id="main-nav">
     <div class="logo"> <a href="index.html">Janelle Lee</a></div>
     <div class="nav-links">
@@ -114,27 +115,45 @@
   </footer>
 
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+  // Fade-out transition on link click
+  document.querySelectorAll('a[href]').forEach(link => {
+    const url = new URL(link.href, window.location.href);
+    const isSameOrigin = url.origin === window.location.origin;
+
+    if (isSameOrigin && !url.href.includes('#')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location = this.href;
+        }, 400);
       });
-    });
+    }
+  });
 
-    document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
-      observer.observe(el);
-    });
-
-    const nav = document.getElementById('main-nav');
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+  // Intersection observer for scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
-  </script>
+  });
+  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Navbar background transition on scroll
+  const nav = document.getElementById('main-nav');
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
 </body>
 </html>

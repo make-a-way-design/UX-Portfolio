@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+    <div id="transition-wrapper" class="transition-wrapper"></div>
   <nav id="main-nav">
     <div class="logo"> <a href="index.html">Janelle Lee</a></div>
     <div class="nav-links">
@@ -26,10 +27,8 @@
     <div class="about-section scroll-fade">
       <h2>Bio</h2>
       <p>Hi! I’m Janelle, a passionate Product Designer focused on crafting beautiful, intuitive digital experiences. I thrive on transforming complex ideas into user-friendly solutions, always with a keen eye for visual storytelling and thoughtful interaction design.
-
-Using user research and rapid prototyping, I simplify complexity and bring clarity to every project I take on. I believe great design starts with empathy and ends with delight.
-
-Outside of design, I love hiking, sightseeing, and kayaking on the bay. I’m based in the charming town of Carmel-by-the-Sea, CA—constantly inspired by the coastal beauty that surrounds me.</p>
+        Using user research and rapid prototyping, I simplify complexity and bring clarity to every project I take on. I believe great design starts with empathy and ends with delight.
+        Outside of design, I love hiking, sightseeing, and kayaking on the bay. I’m based in the charming town of Carmel-by-the-Sea, CA—constantly inspired by the coastal beauty that surrounds me.</p>
     </div>
 
     <!-- <div class="profile-image scroll-fade">
@@ -121,29 +120,47 @@ Outside of design, I love hiking, sightseeing, and kayaking on the bay. I’m ba
   </div>
 </footer>
 
+  
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
+  // Fade-out transition on link click
+  document.querySelectorAll('a[href]').forEach(link => {
+    const url = new URL(link.href, window.location.href);
+    const isSameOrigin = url.origin === window.location.origin;
 
-    document.querySelectorAll('.scroll-fade').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
-  <script>
-    const nav = document.getElementById('main-nav');
-    const header = document.querySelector('header.ibts-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+    if (isSameOrigin && !url.href.includes('#')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location = this.href;
+        }, 400);
+      });
+    }
+  });
+
+  // Intersection observer for scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
-  </script>
+  });
+  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Navbar background transition on scroll
+  const nav = document.getElementById('main-nav');
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
 </body>
 </html>
