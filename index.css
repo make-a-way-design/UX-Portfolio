@@ -45,32 +45,39 @@ header {
   flex-direction: column;
 }
 
-header .header-content {
+.header-content {
+  text-align: center;
+  padding: 6rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
   position: relative;
-  z-index: 1;
-  color: white;
-  text-shadow:rgba(0, 0, 0, 0.15)
+  color: #ffffff;
 }
 
-header h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
-  margin-top: 200px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.header-content h1 {
+  font-size: 3.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
-header .tagline {
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 2px;
+.tagline {
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ffffffcc;
 }
 
-header .subtext {
-  font-size: 16px;
-  line-height: 1.4;
-  margin: 2px 0;
+.subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+  color: #ffffffcc;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* ===========================  
   2) NAVIGATION BAR
