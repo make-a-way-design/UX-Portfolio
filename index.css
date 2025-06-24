@@ -84,10 +84,10 @@ header {
 }
 
 .header-content {
-  text-align: center;
+  text-align: left;
   padding: 6rem 1.5rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 30 auto;
   z-index: 2;
   position: relative;
   color: #ffffff;
