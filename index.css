@@ -39,7 +39,7 @@ body.loaded #preloader {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #333;
   background: #fff;
   line-height: 1.6;
@@ -84,7 +84,7 @@ header {
 }
 
 .header-content {
-  text-align: left;
+  text-align: center;
   padding: 6rem 1.5rem;
   max-width: 800px;
   margin: 30 auto;
@@ -97,6 +97,7 @@ header {
   font-size: 3.25rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  text-shadow:rgba(0, 0, 0, 0.05);
 }
 
 .tagline {
@@ -271,13 +272,13 @@ header.ibts-header {
    */
 .project {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  margin-top: 80px;
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
-  border-left: 6px solid #f5b8c0
 }
 
 .project.normal {
@@ -291,6 +292,17 @@ header.ibts-header {
 .project-text {
   flex: 1 1 45%;
   max-width: 360px;
+}
+.project-text h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-text p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
 }
 
 .project-img {
@@ -315,13 +327,28 @@ header.ibts-header {
   opacity: 1;
   transform: translateY(0);
 }
+.gradient-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.gradient-bar .left{
+  width: 20px;
+  background: linear-gradient(to bottom, #2d2c6e, #e5a2b4);
+  border-radius: 6px;
+  margin-right: 20px;
+}
 
 /*buttons*/
 a.button {
+  background: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  color: #365774;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   display: inline-block;
   margin-top: 20px;
   padding: 10px 24px;
-  color: #443674;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
