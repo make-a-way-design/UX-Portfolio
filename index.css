@@ -84,14 +84,24 @@ header {
 }
 
 .header-content {
-  text-align: center;
+  text-align: left;
   padding: 6rem 1.5rem;
   max-width: 800px;
-  margin: 60 auto;
+  margin-top: 450px;
   z-index: 2;
   position: relative;
   color: #ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.header-content .product-design{
+  text-align: left;
+  padding: 6rem 1.5rem;
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-top: -450px;
 }
 
 .header-content h1 {
@@ -115,7 +125,6 @@ header {
   margin: 0.75rem 0;
   color: #ffffffcc;
   max-width: 90%;
-  margin-left: auto;
   margin-right: auto;
 }
 /* ===========================  
@@ -208,8 +217,7 @@ header.ibts-header {
   justify-content: space-between;
   align-items: center;
   padding: 5% 5%;
-  min-height: 350px;
-  height: auto;
+  max-height: 1000px;
   box-sizing: border-box;
 }
 
