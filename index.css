@@ -584,6 +584,40 @@ a.button:hover {
   }
 }
 
+/* * ================================
+   Key Improvements Styling
+   ================================ */ */
+.ibts-case-section.key-improvements {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 3rem 5vw;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.improvement-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.improvement-list li {
+  background: white;
+  border-left: 5px solid #3B82F6;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.improvement-list li strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #181818;
+}
+
 
 /* ===========================
     ABOUT PAGE
