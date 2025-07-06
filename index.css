@@ -87,21 +87,14 @@ header {
   text-align: left;
   padding: 6rem 1.5rem;
   max-width: 800px;
-  margin-top: 450px;
   z-index: 2;
   position: relative;
   color: #ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .header-content .product-design{
-  text-align: left;
-  padding: 6rem 1.5rem;
-  max-width: 800px;
-  z-index: 2;
-  position: relative;
-  color: #ffffff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  margin-top: -450px;
+  margin: 300px 10px 10px 10px;
+  
 }
 
 .header-content h1 {
@@ -214,7 +207,6 @@ nav.scrolled a {
 header.ibts-header {
   background: url('assets/ibts_app.gif') center/cover no-repeat;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 5% 5%;
   max-height: 1000px;
@@ -280,7 +272,7 @@ header.ibts-header {
    */
 .project {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 80px;
   margin-top: 80px;
@@ -614,6 +606,38 @@ a.button:hover {
   font-size: 1.3rem;
   color: #ffffff;
   margin-bottom: 0;
+}
+.about-section h3{
+  color: #a3a3a3;
+}
+
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.about-section img{
+  max-width: 200px;
+  border-radius: 100%;
+}
+.skills-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skill-category {
+  flex: 1;
+  min-width: 200px;
+}
+
+.skill-category h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 /*=============================
     IBTS WEBSITE REDESIGN PAGE
