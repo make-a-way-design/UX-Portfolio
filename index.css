@@ -736,6 +736,44 @@ a.button:hover {
   --cs-border: #e6e9ee;
 }
 
+/* Case Study Header */
+.case-study-header {
+  position: relative;
+  height: 50vh;
+  min-height: 320px;
+  background: url("assets/inns-header.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.header-overlay {
+  background: rgba(0, 0, 0, 0.45); /* dark overlay for readability */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.case-study-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.case-study-header h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #e0f7fa;
+}
+
+.case-study-header p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.5;
+}
+
 /* Generic container */
 main,
 .case-study-wrap{
