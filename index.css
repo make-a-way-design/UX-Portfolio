@@ -3,6 +3,12 @@
    ===========================
  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: #333;
@@ -836,5 +842,6 @@ body {
 body.fade-out {
   opacity: 0;
 }
+
 
 
