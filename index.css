@@ -55,7 +55,7 @@ header {
 }
 
 .header-content {
-  text-align: left;
+  text-align: center;
   padding: 6rem 1.5rem;
   max-width: 800px;
   z-index: 2;
@@ -64,14 +64,13 @@ header {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .header-content .product-design{
-  margin: 300px 10px 10px 10px;
+ margin-top: -50px 0 20px 0;
   
 }
 
 .header-content h1 {
   font-size: 3.25rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
 }
 
 .tagline {
@@ -109,6 +108,8 @@ nav {
   z-index: 999;
   transition: background 0.3s, box-shadow 0.3s;
 }
+
+.ibts-header .header-content { padding-block-start: 1rem; }
 
 nav .logo a{
   font-size: 1.2rem;
@@ -176,12 +177,25 @@ nav.scrolled a {
  3) IBTS HEADER
   ======================== */
 header.ibts-header {
-  background: url('assets/ibts_app.gif') center/cover no-repeat;
+  background: url('assets/ibts_mobile_background1.png') center/cover no-repeat;
   display: flex;
   align-items: center;
+  justify-content: center;;
   padding: 5% 5%;
-  max-height: 1000px;
+  max-height: 100vh;
+  padding: calc(64px + 2rem) 5% 5%; /* account for nav height */;
   box-sizing: border-box;
+}
+.ibts-header .header-content,
+.ibts-header .product-design,
+.ibts-header .ibts-text {
+  text-align: center;
+  margin: 0 auto;
+}
+
+header.ibts-header h1{
+  color: #fff;
+  margin-top: 0;
 }
 
 .ibts-container {
@@ -703,11 +717,208 @@ a.button:hover {
   font-size: 1rem;
 }
 
+/* ============================
+5) CAMPAIGN CASE STUDY PAGE
+============================ */
+
+/* Theme tokens (keep subtle + coastal) */
+:root{
+  --cs-max: 1000px;
+  --cs-gap: 1.25rem;
+  --cs-radius: 16px;
+  --cs-shadow: 0 8px 24px rgba(0,0,0,.06);
+  --cs-soft: #f6f7f9;
+  --cs-soft-2: #eef1f4;
+  --cs-accent: #1f6f8b;  /* ocean */
+  --cs-accent-2: #5aa9c6; /* lighter ocean */
+  --cs-text: #1b1b1b;
+  --cs-muted: #60656f;
+  --cs-border: #e6e9ee;
+}
+
+/* Generic container */
+main,
+.case-study-wrap{
+  max-width: var(--cs-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* Typography rhythm */
+.case-study-hero h1{
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  line-height: 1.15;
+  margin-bottom: .25rem;
+  letter-spacing: -0.01em;
+}
+.case-study-hero h2{
+  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  color: var(--cs-accent);
+  margin-bottom: .5rem;
+}
+.case-study-hero p{
+  color: var(--cs-muted);
+  max-width: 65ch;
+}
+
+.case-study-section{
+  margin-top: 2.5rem;
+}
+.case-study-section h3{
+  font-size: clamp(1.15rem, 1.9vw, 1.35rem);
+  margin-bottom: .75rem;
+  letter-spacing: -0.01em;
+}
+.case-study-section p{
+  color: var(--cs-text);
+}
+
+/* Hero block */
+.case-study-hero{
+  background: linear-gradient(180deg, var(--cs-soft), transparent 65%);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.75rem;
+  box-shadow: var(--cs-shadow);
+}
+
+/* Campaign cards */
+.campaign{
+  background: #fff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: var(--cs-shadow);
+  margin: 1rem 0 1.25rem;
+}
+.campaign h4{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+}
+.campaign ul{
+  margin: .25rem 0 0;
+  padding-left: 1.1rem;
+}
+.campaign li{
+  margin: .35rem 0;
+}
+
+/* “Cohesion” flow strip */
+.flow{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: var(--cs-gap);
+  margin-top: 1rem;
+}
+.flow-card{
+  background: #fff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1rem;
+  box-shadow: var(--cs-shadow);
+  text-align: center;
+}
+.flow-card h5{
+  font-size: .95rem;
+  margin-bottom: .25rem;
+  color: var(--cs-accent);
+}
+.flow-card p{
+  font-size: .9rem;
+  color: var(--cs-muted);
+}
+
+/* “Impact” inline stats */
+.stats{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: var(--cs-gap);
+  margin-top: .75rem;
+}
+.stat{
+  background: var(--cs-soft);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: .9rem 1rem;
+  text-align: center;
+}
+.stat strong{
+  display:block;
+  font-size: 1.1rem;
+}
+.stat span{
+  font-size: .85rem;
+  color: var(--cs-muted);
+}
+
+/* Subtle badges (optional) */
+.badge{
+  display:inline-block;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: var(--cs-soft-2);
+  border: 1px solid var(--cs-border);
+  font-size: .8rem;
+  color: var(--cs-muted);
+}
+
+/* Limit design stage images */
+.design-stage img {
+  max-width: 700px;   /* cap image size */
+  width: 100%;        /* scale down responsively */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Center the stages in their grid cell */
+.design-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.design-stage.final img {
+  max-width: 480px;
+}
+
+/* Scroll fade you already use */
+.scroll-fade{
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.scroll-fade.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .stats{ grid-template-columns: repeat(2,1fr); }
+  .flow{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px){
+  .case-study-hero{ padding: 1.25rem; }
+  .campaign{ padding: 1rem; }
+}
+
 
 /* ====================================
   6) RESPONSIVE BREAKPOINTS
     ===================================
 */
+
+@media (min-width: 900px) {
+  .ibts-container { justify-content: center; gap: 40px; }
+}
 
 @media (max-width: 900px) {
   .ibts-case-section {

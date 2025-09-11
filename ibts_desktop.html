@@ -17,15 +17,15 @@
     </div>
   </nav>
 
-  <header>
+  <header class="scroll-fade">
     <video autoplay muted loop playsinline>
       <source src="assets/ibts_desktop_mobile.mp4" type="video/mp4">
     </video>
     
     <div class="header-content">
       <div class="product-design">
-      <h1>Inns by the Sea</h1>
-      <p class="tagline">Landing Page Website Redesign</p>
+      <h1>Inns by the Sea Website Redesigned Homepage</h1>
+      <!-- <p class="tagline">Landing Page Website Redesign</p>
       <hr />
       <p class="label">Role</p>
         <p class="value">Product Design, UX/UI Design</p>
@@ -36,7 +36,7 @@
         <hr />
 
         <p class="label">Tools</p>
-        <p class="value">Miro, Figma</p>
+        <p class="value">Miro, Figma</p> -->
         </div>
     </div>
   </header>
@@ -166,6 +166,22 @@
       nav.classList.remove('scrolled');
     }
   });
+
+  // Force header fade-in on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header.ibts-header');
+  if (header) {
+    header.classList.add('visible');
+  }
+});
+
+ // Force header fade-in on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header-content');
+  if (header) {
+    header.classList.add('visible');
+  }
+});
 </script>
 
 </body>

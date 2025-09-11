@@ -18,12 +18,12 @@
     </div>
   </nav>
 
-  <header class="ibts-header">
+  <header class="ibts-header scroll-fade">
     <div class="ibts-container">
       <div class="header-content">
         <div class="product-design">
-        <h1>Product Design</h1>
-        <p class="tagline">Inns by the Sea Mobile Booking</p>
+        <h1>Inns by the Sea Mobile Booking</h1>
+        <!-- <p class="tagline">Inns by the Sea Mobile Booking</p>
         <hr />
         <p class="label">Role</p>
           <p class="value">Product Design, UX/UI Design</p>
@@ -34,7 +34,7 @@
           <hr />
 
           <p class="label">Tools</p>
-          <p class="value">Miro, Figma</p>
+          <p class="value">Miro, Figma</p> -->
         </div>
     </div>
     </div>
@@ -276,6 +276,14 @@
       nav.classList.remove('scrolled');
     }
   });
+
+  // Force header fade-in on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header.ibts-header');
+  if (header) {
+    header.classList.add('visible');
+  }
+});
 </script>
 
 </body>

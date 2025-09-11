@@ -18,7 +18,7 @@
     </div>
   </nav>
 
-  <header>
+  <header class ="header scroll-fade">
   <video autoplay muted loop playsinline>
     <source src="assets/background.mp4" type="video/mp4" />
   </video>
@@ -60,6 +60,20 @@
           <div class="gradient-bar"></div>
             <div class="project-img scroll-fade">
         <img src="assets/ibts_landing_page_thumbnail.png" alt="Website Redesign" class="scroll-thumb visible" />
+        </div>
+      </div>
+    </div>
+
+    <div class="project normal">
+      <div class="project-text scroll-fade">
+        <h2>Integrated Campaign Case Study</h2>
+        <p>Driving Shoulder Season Bookings with Integrated Email Campaigns</p>
+        <a href="campaign_case_study.html" class="button">VIEW PROJECT <span class="arrow">→</span></a>
+        </div>
+        <div class="gradient-wrapper">
+          <div class="gradient-bar"></div>
+            <div class="project-img scroll-fade">
+        <img src="assets/campaign_page_thumbnail.jpg" alt="Website Redesign" class="scroll-thumb visible" />
         </div>
       </div>
     </div>
@@ -132,6 +146,14 @@
       nav.classList.remove('scrolled');
     }
   });
+
+  // Force header fade-in on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header-content');
+  if (header) {
+    header.classList.add('visible');
+  }
+});
 </script>
 
 
