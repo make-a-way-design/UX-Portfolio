@@ -905,14 +905,14 @@ main,
 }
 
 /* Limit design stage images */
-.design-stage img {
-  max-width: 700px;   /* cap image size */
-  width: 100%;        /* scale down responsively */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin: 0 auto;
+.design-progress img {
+  width: 100%;       /* fills the container */
+  max-width: 600px;  /* cap so they don’t get huge on wide screens */
+  height: auto;      /* keeps proportions */
   display: block;
+  margin: 1rem auto; /* centers */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* Center the stages in their grid cell */
