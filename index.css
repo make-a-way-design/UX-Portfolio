@@ -177,7 +177,7 @@ nav.scrolled a {
  3) IBTS HEADER
   ======================== */
 header.ibts-header {
-  background: url('assets/ibts_mobile_background1.png') center/cover no-repeat;
+  background: url('assets/ibts_mobile_header_background.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;;
@@ -379,7 +379,6 @@ a.button:hover {
    */
 .ibts-case-section.case-hero {
   width: 100%;
-  background: #f3f1fa;      /* light grey from your example */
   padding: 60px 5vw;
   margin: 50px auto;
 }
@@ -454,10 +453,7 @@ a.button:hover {
   width: 100%;
   max-width: 1200px;
   min-height: 220px;
-  background: #f3f1fa;
-  margin: 32px auto 32px auto;
   display: block;
-  box-shadow: 0 2px 12px rgba(68,54,116,0.06);
   object-fit: cover;
 }
 .ibts-case-section .img-placeholder {
