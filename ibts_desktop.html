@@ -16,6 +16,12 @@
       <a href="about.html">About</a>
     </div>
   </nav>
+  
+   <!-- Image Zoom Overlay -->
+  <div class="zoom-overlay" id="zoomOverlay">
+  <img src="" alt="Zoomed Image" id="zoomedImg">
+</div>
+
 
   <header class="ibts-header scroll-fade case-study-header">
     <div class="header-content">
@@ -187,6 +193,32 @@ window.addEventListener('DOMContentLoaded', () => {
     header.classList.add('visible');
   }
 });
+
+const zoomOverlay = document.getElementById("zoomOverlay");
+  const zoomedImg = document.getElementById("zoomedImg");
+
+  // Attach click to ALL images
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", () => {
+      zoomedImg.src = img.src;
+      zoomOverlay.classList.add("active");
+    });
+  });
+
+  // Close overlay when clicking background or image
+  zoomOverlay.addEventListener("click", () => {
+    zoomOverlay.classList.remove("active");
+  });
+
+  // Keyboard controls
+  document.addEventListener("keydown", (e) => {
+    if (zoomOverlay.classList.contains("active")) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        // Close on Esc
+        zoomOverlay.classList.remove("active");
+      }
+    }
+    });
 </script>
 
 </body>
