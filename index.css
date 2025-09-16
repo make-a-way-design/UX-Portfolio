@@ -90,6 +90,51 @@ header {
   max-width: 90%;
   margin-right: auto;
 }
+
+/*=============================
+    IMAGE HOVER
+  =============================
+   */
+
+   img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+
+  /* Fullscreen overlay */
+  .zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+  }
+
+  .zoom-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .zoom-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    cursor: zoom-out;
+  }
+
+  .zoom-overlay.active img {
+    transform: scale(1);
+  }
+
 /* ===========================  
   2) NAVIGATION BAR
    ===========================

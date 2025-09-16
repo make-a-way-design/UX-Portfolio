@@ -18,6 +18,11 @@
     </div>
   </nav>
 
+  <!-- Image Zoom Overlay -->
+  <div class="zoom-overlay" id="zoomOverlay">
+  <img src="" alt="Zoomed Image" id="zoomedImg">
+</div>
+
   <header class="ibts-header scroll-fade case-study-header">
     <div class="ibts-container">
       <div class="header-content">
@@ -78,22 +83,13 @@
     </ul>
   </section>
 
-  <!-- Goals -->
-  <section class="ibts-case-section">
-    <h2>Project Goals📈</h2>
-    <ul>
-      <li><strong>Seamless Booking Experience:</strong> Reduce time-to-book from 2 minutes to under 60 seconds</li>
-      <li><strong>Enhanced User Engagement:</strong> Improve mobile search engagement by 25%</li>
-      <li><strong>Increased Promotion & Upselling:</strong> Increase completed bookings by 15%</li>
-    </ul>
-  </section>
-
   <!-- Process -->
   <section class="ibts-case-section"><h2>Process🤝</h2>
-    <h3>User Research</h3>
+    <!-- <h3>User Research</h3>
     <p>Conducted 5 user interviews and analyzed survey data to uncover pain points in our existing mobile flow.</p>
     <p>In addressing the question, “How can we improve the overall customization and personal experiences of booking direct?”, our research identified significant gaps in the current guest booking journey. 
-    <h3>Market Research</h3>
+     -->
+      <h3>Market Research</h3>
     <div class="img-placeholder">
       <img src="assets/competitve_analysis_ibts_mobile.png" alt="Competitive Analysis Graphic" />
     </div>
@@ -103,7 +99,7 @@
   </section>
   <!-- User Personas -->
   <section class="ibts-case-section key-findings">
-    <h2>Key Findings</h2>
+    <h3>Key Findings</h3>
       <div class="quotes">
         <div class="quote left">
       Where can I purchase a gift certificate? I couldn’t find it anywhere on the website.
@@ -115,7 +111,7 @@
       Which room did I stay in last time? I loved it but can’t remember the name.
         </div>
         <section class="ibts-case-section user-personas">
-    <h2>User Personas</h2>
+    <h3>User Personas</h3>
         <div class="img-placeholder">
       <img src="assets/persona1_lena_marco.png" alt="Lena & Marco"/>
       </div>
@@ -294,6 +290,33 @@ window.addEventListener('DOMContentLoaded', () => {
     header.classList.add('visible');
   }
 });
+
+ const zoomOverlay = document.getElementById("zoomOverlay");
+  const zoomedImg = document.getElementById("zoomedImg");
+
+  // Attach click to ALL images
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", () => {
+      zoomedImg.src = img.src;
+      zoomOverlay.classList.add("active");
+    });
+  });
+
+  // Close overlay when clicking background or image
+  zoomOverlay.addEventListener("click", () => {
+    zoomOverlay.classList.remove("active");
+  });
+
+  // Keyboard controls
+  document.addEventListener("keydown", (e) => {
+    if (zoomOverlay.classList.contains("active")) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        // Close on Esc
+        zoomOverlay.classList.remove("active");
+      }
+    }
+    });
+
 </script>
 
 </body>
