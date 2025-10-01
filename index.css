@@ -1,1148 +1,135 @@
-/* ===========================
-  1) RESET + BASE TYPOGRAPHY
-   ===========================
- */
+/* =============================================
+   GG Kim–inspired layout + flow for Janelle site
+   Drops in as a replacement for index.css and
+   works with existing HTML structure:
+   - nav#main-nav, .logo, .nav-links
+   - header.ibts-header.case-study-header
+   - .section, .project, .ibts-case-section, footer
+   ============================================= */
+
+/* 1) RESET & TOKENS */
+*, *::before, *::after{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{ margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6; background:#0b0b0c; color:#e7e7ea; -webkit-font-smoothing:antialiased; }
+img, video{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: #333;
-  background: #fff;
-  line-height: 1.6;
-}
-
-/*hero*/
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
-
-header {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-header {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.header-content {
-  text-align: center;
-  padding: 6rem 1.5rem;
-  max-width: 800px;
-  z-index: 2;
-  position: relative;
-  color: #ffffff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-.header-content .product-design{
- margin-top: -50px 0 20px 0;
-  
-}
-
-.header-content h1 {
-  font-size: 3.25rem;
-  font-weight: 700;
-}
-
-.tagline {
-  font-size: 1.25rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #ffffffcc;
-}
-
-.subtext {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0.75rem 0;
-  color: #ffffffcc;
-  max-width: 90%;
-  margin-right: auto;
-}
-
-/*=============================
-    IMAGE HOVER
-  =============================
-   */
-
-   img {
-    cursor: zoom-in;
-    transition: transform 0.3s ease;
-  }
-
-  /* Fullscreen overlay */
-  .zoom-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,0.8);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 9999;
-  }
-
-  .zoom-overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .zoom-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    cursor: zoom-out;
-  }
-
-  .zoom-overlay.active img {
-    transform: scale(1);
-  }
-
-/* ===========================  
-  2) NAVIGATION BAR
-   ===========================
- */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 999;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-.ibts-header .header-content { padding-block-start: 1rem; }
-
-nav .logo a{
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-  text-decoration: none;
-}
-
-nav .nav-links {
-  display: flex;
-  gap: 1.5rem;
-  color: lightgrey;
-}
-
-nav .nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav .nav-links a:hover {
-  text-decoration: underline;
-  background: #b1b1b1;
-  transition: all 0.3s ease;
-  transform: translateY(0);
-  padding: 10px; 
-  border-radius: 4px;
-}
-.logo a:hover{
-    background: #b1b1b1;
-  transition: all 0.3s ease;
-  transform: translateY(0);
-  padding: 5.5px; 
-  border-radius: 4px;
-}
-
-/* Navbar when scrolled past header */
-nav.scrolled {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-nav.scrolled .nav-links a,
-nav.scrolled .logo {
-  color: #181818;
-}
-
-.section {
-  padding: 40px 20px 40px;
-  max-width: 1200px;
-  margin: auto;
-}
-.scroll-fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.scroll-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-  /*scrolled past header*/
-nav.scrolled {
-  background: white;      /* make the navbar background light */
-}
-
-  /* switch links to dark */
-nav.scrolled a {
-  color: black;
-}
-/* ======================
- 3) IBTS HEADER
-  ======================== */
-header.ibts-header {
-  background: url('assets/ibts_mobile_header_background.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;;
-  padding: 5% 5%;
-  max-height: 100vh;
-  padding: calc(64px + 2rem) 5% 5%; /* account for nav height */;
-  box-sizing: border-box;
-}
-.ibts-header .header-content,
-.ibts-header .product-design,
-.ibts-header .ibts-text {
-  text-align: center;
-  margin: 0 auto;
-}
-
-header.ibts-header h1{
-  color: #fff;
-  margin-top: 0;
-}
-
-.ibts-container {
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.ibts-text {
-  flex: 0 0 380px;
-  max-width: 380px;
-  color: #fff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 4vw;
-}
-
-.ibts-text h1 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-  text-align: left;
-  align-self: flex-start;
-  text-shadow: rgba(0, 0, 0, 0.5);
-}
-
-.ibts-text .label {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-}
-
-.ibts-text .value {
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-.ibts-text hr {
-  border: none;
-  border-top: 1px solid rgba(94, 94, 94, 0.2);
-  margin: 0 0 1.25rem 0;
-}
-
-.ibts-text hr:last-of-type {
-  display: none;
-}
-
-/* ============================
-    4) PROJECTS
-  =============================
-   */
-.project {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 80px;
-  margin-top: 80px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.project.normal {
-  flex-direction: row;
-}
-
-.project.reverse {
-  flex-direction: row-reverse;
-}
-
-.project-text {
-  flex: 1 1 45%;
-  max-width: 360px;
-}
-.project-text h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.project-text p {
-  font-size: 1.05rem;
-  color: #444;
-  line-height: 1.7;
-}
-
-.project-img {
-  flex: 1 1 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.project-img img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.project-img img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.gradient-wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
-.gradient-bar .left{
-  width: 20px;
-  background: linear-gradient(to bottom, #2d2c6e, #e5a2b4);
-  border-radius: 6px;
-  margin-right: 20px;
-}
-
-/*buttons*/
-a.button {
-  background: #f9f9f9;
-  border: 1px solid #f9f9f9;
-  color: #365774;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 24px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  transform: translateY(0);
-}
-a.button:hover {
-  color: #2c2555;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-.button .arrow {
-  display: inline-block;
-  margin-left: 8px;
-  transition: transform 0.3s ease;
-}
-
-.button:hover .arrow {
-  transform: translateX(4px);
-}
-
-
-/* =============================
-    5) IBTS CASE STUDY
-   =============================
-     */
-     /* _____________________________________
-        5a) Base card style for every section
-        _____________________________________
-      */
-.ibts-case-section {
-  padding: 80px 100px 60px;
-  max-width: 1200px;
-  margin: 50px auto;
-  background: #fff;
-  box-shadow: 0 4px 32px rgba(68,54,116,0.07);
-  margin-bottom: 40px;
-}
-/* ______________________________________
-    5b) Hero row
-   _____________________________________
-   */
-.ibts-case-section.case-hero {
-  width: 100%;
-  padding: 60px 5vw;
-  margin: 50px auto;
-}
-.case-hero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  align-items: start;
-}
-/* Left & right column inherit the case‐section styles for h2/h3/p */
-.case-hero-left,
-.case-hero-right {
-  text-align: left;
-}
-.case-hero-left h2 {
-  margin-bottom: 0.5rem;
-}
-.case-hero-left p {
-  margin-bottom: 1.5rem;
-}
-.case-hero-right h3 {
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-.case-hero-right p {
-  line-height: 1.65;
-}
-.case-hero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  align-items: start;
-}
-.case-hero-grid {
-  align-items: start;           
-}
-.case-hero-left,
-.case-hero-right {
-  align-self: start;            
-}
-.case-hero-left > h2,
-.case-hero-right > h3 {
-  margin-block-start: 0;        
-}
-.ibts-case-section h2 {
-  font-size: 2rem;
-  color: #8e8e8e;
-  margin-bottom: 18px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-.ibts-case-section h3 {
-  font-size: 1.2rem;
-  color: #181818;
-  margin: 32px 0 12px;
-  font-style: italic;
-}
-.ibts-case-section p, .ibts-case-section ul {
-  font-size: 1.08rem;
-  color: #333;
-  margin-bottom: 18px;
-  line-height: 1.7;
-}
-.ibts-case-section ul {
-  padding-left: 1.2em;
-}
-.ibts-case-section .img-placeholder, .ibts-case-section img {
-  width: 100%;
-  max-width: 1200px;
-  min-height: 220px;
-  display: block;
-  object-fit: cover;
-}
-.ibts-case-section .img-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #b3a7d6;
-  font-size: 1.1rem;
-  font-style: italic;
-}
-
-/* ==============================
-    5c) Key Findings
-  ==============================
-   */
-.ibts-case-section.key-findings .quotes {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.ibts-case-section.key-findings .quote {
-  max-width: 60%;
-  padding: 1rem 1.5rem;
-  background-color: #3B82F6;    /* blue-500 */
-  color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  line-height: 1.4;
-}
-
-/* stagger left vs right */
-.ibts-case-section.key-findings .quote.left {
-  margin-right: auto;
-}
-.ibts-case-section.key-findings .quote.right {
-  margin-left: auto;
-}
-
-/* full-width on small screens */
-@media (max-width: 600px) {
-  .ibts-case-section.key-findings .quote {
-    max-width: 100%;
-    margin: 0 auto !important;
-  }
-}
-
-/* ============================
-    5d) DESIGN PROCESS
-   =============================
-     */
-/* ——————————————————————————————
-   5d) DESIGN PROCESS (black bg, white text)
-   —————————————————————————————— */
-.ibts-case-section.design-process {
-  background-color: #1b1b1b !important; /* force black bg */
-  color: #fff;                          /* default text white */
-  padding: 3rem 5vw;
-}
-
-/* Section heading */
-.ibts-case-section.design-process h2 {
-  color: #fff;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-/* process wrapper: flex layout if you have multiple steps */
-.ibts-case-section.design-process .process {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-/* each individual step bubble/card */
-.ibts-case-section.design-process .step {
-  flex: 1 1 calc(50% - 1.5rem); /* two columns, or adjust as needed */
-  background: #262626;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* list inside each step */
-.ibts-case-section.design-process .step ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.ibts-case-section.design-process .step li {
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  color: #eee; /* slightly softer white for body copy */
-}
-
-/* strong text */
-.ibts-case-section.design-process .step li strong {
-  color: #fff;
-}
-
-/* Responsive: stack steps on small screens */
-@media (max-width: 768px) {
-  .ibts-case-section.design-process .process {
-    flex-direction: column;
-  }
-  .ibts-case-section.design-process .step {
-    flex: 1 1 100%;
-  }
-}
-
-/* * ================================
-   Key Improvements Styling
-   ================================ */ */
-.ibts-case-section.key-improvements {
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  padding: 3rem 5vw;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-}
-
-.improvement-list {
-  list-style: none;
-  padding-left: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-.improvement-list li {
-  background: white;
-  border-left: 5px solid #3B82F6;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-.improvement-list li strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: #181818;
-}
-
-
-/* ===========================
-    ABOUT PAGE
-   =========================== */
-.about-header {
-  background: #181818;
-  color: #fff;
-  padding: 120px 0 60px 0;
-  text-align: center;
-}
-
-.about-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.about-header p {
-  font-size: 1.3rem;
-  color: #ffffff;
-  margin-bottom: 0;
-}
-.about-section h3{
-  color: #a3a3a3;
-}
-
-.about-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.about-section img{
-  max-width: 200px;
-  border-radius: 100%;
-}
-.skills-columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.skill-category {
-  flex: 1;
-  min-width: 200px;
-}
-
-.skill-category h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-/*=============================
-    IBTS WEBSITE REDESIGN PAGE
-    ============================
-      */
-.ibts-case-section video {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: 2rem auto;
-  border-radius: 12px;
-  object-fit: contain; /* override cover or full fill */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/*=======================
-  ABOUT PAGE PROJECT CARDS
-=========================
-*/
-.project-card {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-.card-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: #111;
-}
-
-.card-subtitle {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.card-details {
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  color: #333;
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
-/* ============================
-5) CAMPAIGN CASE STUDY PAGE
-============================ */
-
-/* Theme tokens (keep subtle + coastal) */
 :root{
-  --cs-max: 1000px;
-  --cs-gap: 1.25rem;
-  --cs-radius: 16px;
-  --cs-shadow: 0 8px 24px rgba(0,0,0,.06);
-  --cs-soft: #f6f7f9;
-  --cs-soft-2: #eef1f4;
-  --cs-accent: #1f6f8b;  /* ocean */
-  --cs-accent-2: #5aa9c6; /* lighter ocean */
-  --cs-text: #1b1b1b;
-  --cs-muted: #60656f;
-  --cs-border: #e6e9ee;
+  /* shell */
+  --rail-w: 260px;
+  --page-max: 1120px;
+  --pad: 24px;
+  /* colors */
+  --bg: #0b0b0c;          /* page */
+  --elev: #121214;        /* elevated cards */
+  --muted: #a1a1aa;       /* subtle text */
+  --line: #1e1e22;        /* dividers */
+  --accent: #3b82f6;      /* link hover / focus */
+  --chip: #0f172a;        /* soft chip bg */
 }
 
-/* Case Study Header */
-.case-study-header {
-  position: relative;
-  height: 50vh;
-  min-height: 320px;
-  background: url("assets/inns-header.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+/* 2) APP SHELL — LEFT RAIL NAV */
+#main-nav{
+  position:fixed; inset:0 auto 0 0; width:var(--rail-w); z-index:40;
+  display:flex; flex-direction:column; gap:20px; padding:28px 18px; border-right:1px solid var(--line);
+  background:linear-gradient(180deg, #0c0c0e 0%, #0b0b0c 100%);
 }
+#main-nav .logo{ font-weight:700; letter-spacing:.2px; }
+#main-nav .logo a{ padding:8px 10px; border-radius:8px; background:transparent; transition:background .2s ease; }
+#main-nav .logo a:hover{ background:#151518; }
 
-.header-overlay {
-  background: rgba(0, 0, 0, 0.45); /* dark overlay for readability */
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 800px;
-}
+#main-nav .nav-links{ display:flex; flex-direction:column; gap:6px; margin-top:8px; }
+#main-nav .nav-links a{ color:#d6d6db; padding:8px 10px; border-radius:8px; display:inline-flex; align-items:center; gap:8px; transition:background .18s ease, color .18s ease; }
+#main-nav .nav-links a:hover{ background:#151518; color:#fff; }
 
-.case-study-header h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
+/* small contact/cta stack under nav */
+#main-nav .stack{ margin-top:auto; display:grid; gap:8px; }
+#main-nav .stack a{ font-size:.95rem; color:var(--muted); }
 
-.case-study-header h2 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-  color: #e0f7fa;
+/* 3) MAIN COLUMN */
+main, .section, header, .ibts-case-section, .project-card{ 
+  margin-left: calc(var(--rail-w) + 24px);
 }
+.container{ max-width:var(--page-max); padding: 48px var(--pad); margin:0 auto; }
 
-.case-study-header p {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.5;
-}
+/* global rhythm */
+h1{ font-size:clamp(28px, 4vw, 42px); letter-spacing:-0.01em; line-height:1.15; margin:0 0 6px; }
+h2{ font-size:clamp(20px, 2.6vw, 28px); letter-spacing:-0.01em; margin:28px 0 8px; color:#f0f0f2; }
+h3{ font-size:clamp(16px, 2vw, 18px); color:var(--muted); font-weight:600; margin:20px 0 6px; }
+p{ color:#cbcbd2; }
+.small{ color:var(--muted); font-size:.95rem; }
 
-/* Generic container */
-main,
-.case-study-wrap{
-  max-width: var(--cs-max);
-  margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
-}
+/* 4) TOP BANNER (optional) */
+.banner{ position:sticky; top:0; z-index:30; margin-left:calc(var(--rail-w) + 24px); background:#1f31ff; color:#fff; text-align:center; padding:8px 12px; font-weight:600; letter-spacing:.2px; }
 
-/* Typography rhythm */
-.case-study-hero h1{
-  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-  line-height: 1.15;
-  margin-bottom: .25rem;
-  letter-spacing: -0.01em;
-}
-.case-study-hero h2{
-  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
-  font-weight: 600;
-  color: var(--cs-accent);
-  margin-bottom: .5rem;
-}
-.case-study-hero p{
-  color: var(--cs-muted);
-  max-width: 65ch;
-}
+/* 5) CASE STUDY HEADER — centered hero like ggkim */
+.case-study-header{ position:relative; min-height:46vh; display:flex; align-items:center; justify-content:center; text-align:left; background:transparent; padding: 72px 0 24px; }
+.case-study-header .header-overlay{ background:#101014; border:1px solid var(--line); box-shadow: 0 12px 40px rgba(0,0,0,.45); border-radius:14px; padding:22px 22px; max-width:720px; }
+.case-study-header h1{ margin-bottom:6px; }
+.case-study-header h2{ color:#a4b8ff; margin:0 0 6px; font-weight:600; }
+.case-study-header p{ color:#c9c9d2; }
 
-.case-study-section{
-  margin-top: 2.5rem;
-}
-.case-study-section h3{
-  font-size: clamp(1.15rem, 1.9vw, 1.35rem);
-  margin-bottom: .75rem;
-  letter-spacing: -0.01em;
-}
-.case-study-section p{
-  color: var(--cs-text);
-}
+/* 6) SECTIONS / CARDS */
+.section{ padding:56px var(--pad); max-width:var(--page-max); }
+.card, .ibts-case-section{ background:var(--elev); border:1px solid var(--line); border-radius:14px; box-shadow: 0 12px 40px rgba(0,0,0,.30); padding:28px; max-width:var(--page-max); margin:24px auto; }
+.ibts-case-section h2{ color:#e9e9f0; }
+.ibts-case-section h3{ color:var(--muted); font-style:normal; }
+.ibts-case-section p, .ibts-case-section li{ color:#d0d0d7; }
+.ibts-case-section .img-placeholder{ background:#0f0f12; border:1px dashed #2a2a31; border-radius:12px; padding:8px; }
+.ibts-case-section iframe{ width:100%; border-radius:12px; border:1px solid var(--line); background:#0f0f12; }
 
-/* Hero block */
-.case-study-hero{
-  background: linear-gradient(180deg, var(--cs-soft), transparent 65%);
-  border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius);
-  padding: 1.75rem;
-  box-shadow: var(--cs-shadow);
-}
+/* 7) TIMELINE / TEAM rows (ggkim vibe) */
+.list{ display:grid; gap:10px; margin:18px 0; }
+.row{ display:grid; grid-template-columns: 1fr auto; align-items:center; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#0f0f12; }
+.row .left{ display:flex; gap:10px; align-items:center; }
+.row .badge{ background:var(--chip); border:1px solid var(--line); padding:4px 8px; border-radius:8px; font-size:.85rem; color:#c8c8cf; }
+.row .meta{ color:#8e8e96; font-size:.95rem; }
 
-/* Campaign cards */
-.campaign{
-  background: #fff;
-  border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius);
-  padding: 1.25rem 1.25rem 1rem;
-  box-shadow: var(--cs-shadow);
-  margin: 1rem 0 1.25rem;
-}
-.campaign h4{
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  font-size: 1.05rem;
-  margin-bottom: .5rem;
-}
-.campaign ul{
-  margin: .25rem 0 0;
-  padding-left: 1.1rem;
-}
-.campaign li{
-  margin: .35rem 0;
-}
+/* 8) IMAGES: soft zoom-on-hover + lightbox already in JS */
+img{ border-radius:12px; background:#0d0d10; }
+img.zoomable{ cursor:zoom-in; transition: transform .25s ease, filter .25s ease; }
+img.zoomable:hover{ transform: translateY(-2px); filter:brightness(1.03); }
 
-/* “Cohesion” flow strip */
-.flow{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: var(--cs-gap);
-  margin-top: 1rem;
-}
-.flow-card{
-  background: #fff;
-  border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius);
-  padding: 1rem;
-  box-shadow: var(--cs-shadow);
-  text-align: center;
-}
-.flow-card h5{
-  font-size: .95rem;
-  margin-bottom: .25rem;
-  color: var(--cs-accent);
-}
-.flow-card p{
-  font-size: .9rem;
-  color: var(--cs-muted);
-}
+/* 9) CTA BUTTONS */
+.button, a.button{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; font-weight:600; font-size:.95rem; border-radius:10px; background:#11121a; border:1px solid var(--line); color:#e9e9f2; transition: transform .12s ease, border-color .2s ease, box-shadow .2s ease; }
+.button:hover{ transform:translateY(-2px); border-color:#2a2a31; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.button .arrow{ transition:transform .18s ease; }
+.button:hover .arrow{ transform:translateX(4px); }
 
-/* “Impact” inline stats */
-.stats{
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: var(--cs-gap);
-  margin-top: .75rem;
-}
-.stat{
-  background: var(--cs-soft);
-  border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius);
-  padding: .9rem 1rem;
-  text-align: center;
-}
-.stat strong{
-  display:block;
-  font-size: 1.1rem;
-}
-.stat span{
-  font-size: .85rem;
-  color: var(--cs-muted);
-}
+/* 10) PROJECT SPLIT (image + text) */
+.project{ display:grid; grid-template-columns: 1.1fr 1fr; gap:26px; align-items:end; max-width:var(--page-max); margin:64px auto; }
+.project.reverse{ grid-template-columns: 1fr 1.1fr; }
+.project-text h2{ margin-top:0; }
+.project-text p{ color:#cfcfd6; }
+.project-img img{ width:100%; border-radius:14px; box-shadow: 0 18px 48px rgba(0,0,0,.45); }
 
-/* Subtle badges (optional) */
-.badge{
-  display:inline-block;
-  padding: .25rem .55rem;
-  border-radius: 999px;
-  background: var(--cs-soft-2);
-  border: 1px solid var(--cs-border);
-  font-size: .8rem;
-  color: var(--cs-muted);
-}
+/* 11) FOOTER */
+footer{ margin-left: calc(var(--rail-w) + 24px); padding:48px var(--pad) 72px; border-top:1px solid var(--line); color:#bdbdc6; }
+footer .footer-intro p{ font-size:1.25rem; font-weight:600; color:#f3f3f6; }
+footer .footer-content{ display:flex; flex-wrap:wrap; gap:48px; margin:22px 0 24px; }
+footer .footer-section h4{ font-size:.85rem; letter-spacing:.12em; color:#878791; margin:0 0 6px; }
+footer .footer-section a{ color:#c9c9d2; }
+footer .footer-section a:hover{ color:#fff; }
+footer .footer-bottom{ display:flex; gap:20px; color:#8e8e96; }
 
-/* Limit design stage images */
-.design-progress img {
-  width: 100%;       /* fills the container */
-  max-width: 600px;  /* cap so they don’t get huge on wide screens */
-  height: auto;      /* keeps proportions */
-  display: block;
-  margin: 1rem auto; /* centers */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+/* 12) UTILITIES */
+.max{ max-width:var(--page-max); margin:0 auto; }
+.muted{ color:var(--muted); }
+.divider{ height:1px; background:var(--line); border:none; margin:14px 0; }
+.scroll-fade{ opacity:0; transform:translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+.scroll-fade.visible{ opacity:1; transform:translateY(0); }
 
-/* Center the stages in their grid cell */
-.design-stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* 13) RESPONSIVE */
+@media (max-width: 1080px){ :root{ --rail-w: 220px; } }
+@media (max-width: 880px){
+  #main-nav{ position:fixed; inset:auto 0 0 0; width:auto; height:56px; padding:0 12px; flex-direction:row; align-items:center; border-right:none; border-top:1px solid var(--line); backdrop-filter:saturate(130%) blur(10px); background: rgba(14,14,16,.86); }
+  #main-nav .logo{ order:1; }
+  #main-nav .nav-links{ order:2; flex-direction:row; gap:4px; margin-left:8px; overflow:auto; }
+  #main-nav .nav-links a{ padding:6px 10px; }
+  #main-nav .stack{ display:none; }
 
-.design-stage.final img {
-  max-width: 480px;
+  main, .section, header, .ibts-case-section, .project-card, footer{ margin-left:0; }
+  .banner{ margin-left:0; }
+  .section, .container{ padding: 40px var(--pad); }
+  .project{ grid-template-columns: 1fr; }
 }
-
-/* Scroll fade you already use */
-.scroll-fade{
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .5s ease, transform .5s ease;
-}
-.scroll-fade.visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive tweaks */
-@media (max-width: 900px){
-  .stats{ grid-template-columns: repeat(2,1fr); }
-  .flow{ grid-template-columns: 1fr; }
-}
-
-@media (max-width: 560px){
-  .case-study-hero{ padding: 1.25rem; }
-  .campaign{ padding: 1rem; }
-}
-
-
-/* ====================================
-  6) RESPONSIVE BREAKPOINTS
-    ===================================
-*/
-
-@media (min-width: 900px) {
-  .ibts-container { justify-content: center; gap: 40px; }
-}
-
-@media (max-width: 900px) {
-  .ibts-case-section {
-    padding: 48px 8vw 36px;
-    max-width: 98vw;
-  }
-  .ibts-case-section .img-placeholder, .ibts-case-section img {
-    max-width: 98vw;
-    min-height: 120px;
-  }
-}
-
-@media (max-width: 600px) {
-  .ibts-case-section {
-    padding: 32px 2vw 24px;
-    border-radius: 8px;
-  }
-  .ibts-case-section h2 {
-    font-size: 1.3rem;
-  }
-  @media (max-width: 800px) {
-  .case-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-}
-
-/*mobile view*/
-@media (max-width: 768px) {
-  .project {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .project-text {
-  width: 100%;
-  padding: 0 10px;
-  text-align: left;
-}
-.project-img img {
-  max-width: 90%;
-  margin: 20px auto 0;
-}
-
-  nav .nav-links {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-
-  header h1 {
-    font-size: 40px;
-  }
-
-  header .tagline {
-    font-size: 14px;
-  }
-
-  header .subtext {
-    font-size: 14px;
-  }
-}
-/* ================================
-   7) FOOTER
-   ================================ */
-footer {
-  background: #fff;
-  padding: 60px 5vw;
-  text-align: center;
-}
-
-/* Intro line */
-footer .footer-intro {
-  margin-bottom: 40px;
-}
-footer .footer-intro p {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Middle columns */
-footer .footer-content {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-footer .footer-section {
-  max-width: 250px;
-}
-footer .footer-section h4 {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-bottom: 0.5rem;
-}
-footer .footer-section p {
-  font-size: 1rem;
-  color: #333;
-}
-footer .footer-section a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-footer .footer-section a:hover {
-  color: #443674;
-}
-
-/* Bottom row */
-footer .footer-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-/* ============
-    Page Transitions
-  ==================== 
-  */
-/* Page transition styles */
-body {
-  opacity: 1;
-  transition: opacity 0.9s ease;
-}
-
-body.fade-out {
-  opacity: 0;
-}
-
-
-
