@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  <!-- Top Bar -->
+<div class="topbar">
+  <a class="brand-mini" href="index.html" aria-label="Home">
+    <img src="Logo -Janelle.png" alt="Janelle logo" />
+    <span>Janelle Lee</span>
+  </a>
+  <button class="hamburger topbar-toggle" aria-label="Open menu"><span></span></button>
+</div>
+
+<!-- Transition wrapper and main nav -->
   <div id="transition-wrapper" class="transition-wrapper"></div>
   <nav id="main-nav">
     <div class="brand">
@@ -171,7 +181,47 @@ window.addEventListener('DOMContentLoaded', () => {
     header.classList.add('visible');
   }
 });
+
 </script>
+<!-- backdrop for the mobile menu -->
+<div class="nav-scrim" hidden></div>
+
+<script>
+  // Run after DOM is ready (safe even if this appears early or late)
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.hamburger');
+    const scrim = document.querySelector('.nav-scrim');
+
+    function toggle(on) {
+      document.body.classList.toggle('nav-open', on);
+      if (scrim) scrim.hidden = !on; // show scrim only when menu is open
+    }
+
+    if (btn) btn.addEventListener('click', () => toggle(!document.body.classList.contains('nav-open')));
+    if (scrim) scrim.addEventListener('click', () => toggle(false));
+  });
+</script>
+
+<!-- backdrop for the mobile menu (keep this near the end of body) -->
+<div class="nav-scrim" hidden></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.hamburger'); // supports topbar + any other
+    const scrim = document.querySelector('.nav-scrim');
+
+    function toggle(on) {
+      document.body.classList.toggle('nav-open', on);
+      if (scrim) scrim.hidden = !on;
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', () =>
+      toggle(!document.body.classList.contains('nav-open'))
+    ));
+    if (scrim) scrim.addEventListener('click', () => toggle(false));
+  });
+</script>
+
 
 
 </body>
