@@ -2,116 +2,322 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IBTS Mobile App — Case Study</title>
-  <!-- Minimal, image‑first layout inspired by ggkim.com/forge -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBTS Mobile App - Janelle Lee</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <!-- Lightweight top bar -->
-  <header class="topbar">
-    <div class="container bar">
-      <a class="brand" href="index.html">Janelle Lee</a>
-      <nav class="navlinks">
-        <a href="#overview">Overview</a>
-        <a href="#process">Process</a>
-        <a href="#solution">Solution</a>
-        <a href="#results">Results</a>
-      </nav>
+    <div id="transition-wrapper" class="transition-wrapper"></div>
+
+  <nav id="main-nav">
+    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <!-- <a href="portfolio.html">Work</a> -->
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Image Zoom Overlay -->
+  <div class="zoom-overlay" id="zoomOverlay">
+  <img src="" alt="Zoomed Image" id="zoomedImg">
+</div>
+
+  <header class="ibts-header scroll-fade case-study-header">
+    <div class="ibts-container">
+      <div class="header-content">
+        <div class="product-design">
+          <div class="header-overlay">
+        <h1>Mobile Booking App</h1>
+        <h2>Inns by the Sea </h2>
+        <p>Resolving booking issues: Improving the mobile booking user experience.</p>
+        <!-- <p class="tagline">Inns by the Sea Mobile Booking</p>
+        <hr />
+        <p class="label">Role</p>
+          <p class="value">Product Design, UX/UI Design</p>
+          <hr />
+
+          <p class="label">Duration</p>
+          <p class="value">8 Weeks</p>
+          <hr />
+
+          <p class="label">Tools</p>
+          <p class="value">Miro, Figma</p> -->
+        </div>
+    </div>
+    </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO: Big title, tight subtitle, hero image full width -->
-    <section class="section hero">
-      <div class="container narrow">
-        <h1>Inns by the Sea — Mobile Booking Experience</h1>
-        <p class="kicker">A concise, image‑first case study demonstrating a user‑centered redesign of the booking flow — focused on clarity, discoverability of gift certificates, and a smoother path to reservation.</p>
-      </div>
-      <figure class="media">
-        <!-- Replace with your final hero mockup -->
-        <img src="assets/ibts_mobile_app_preview.jpg" alt="IBTS mobile app hero"/>
-      </figure>
-      <div class="container meta">
-        <div class="meta-item"><span class="label">Role</span><span class="value">UX Designer — Research, Wireframing, Prototyping, Testing</span></div>
-        <div class="meta-item"><span class="label">Timeline</span><span class="value">Oct 2024 – Jun 2025</span></div>
-        <div class="meta-item"><span class="label">Tools</span><span class="value">Figma, Interviews, Usability Tests</span></div>
-        <div class="meta-item"><span class="label">Goal</span><span class="value">Reduce booking friction & clarify gift certificate purchase</span></div>
-      </div>
-    </section>
-
-    <!-- PROBLEM + PROCESS as two columns, clean and compact -->
-    <section id="overview" class="section two">
-      <div class="container grid-2">
-        <div>
-          <h2>Problem</h2>
-          <p>Guests struggled to locate gift certificates and encountered ambiguity in the booking flow, creating friction and missed conversions.</p>
-        </div>
-        <div>
-          <h2>Process</h2>
-          <ul class="steps">
-            <li><strong>Research</strong> — 5 interviews + usability tests surfaced booking pain points</li>
-            <li><strong>Define</strong> — Personas & task flows guided the redesign</li>
-            <li><strong>Design</strong> — Wireframes → interactive prototype in Figma</li>
-            <li><strong>Test</strong> — Iterated flows to reduce confusion & steps</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOLUTION: large, edge‑to‑edge images with short captions -->
-    <section id="solution" class="section">
-      <div class="container narrow">
-        <h2>Solution</h2>
-      </div>
-      <figure class="media">
-        <img src="assets/ibts-screens-light.png" alt="Redesigned booking flow — light"/>
-        <figcaption>Streamlined booking with clear primary actions and surfaced gift certificates.</figcaption>
-      </figure>
-      <figure class="media">
-        <img src="assets/ibts-screens-dark.png" alt="Redesigned booking flow — dark"/>
-        <figcaption>Dark theme variant for improved readability and nighttime use.</figcaption>
-      </figure>
-      <div class="container narrow">
-        <ul class="bullets">
-          <li>Gift certificates accessible from primary navigation</li>
-          <li>Simplified booking flow with fewer steps</li>
-          <li>Responsive, mobile‑first UI with clear visual hierarchy</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- RESULTS + REFLECTION in split grid like ggkim minimalist tone -->
-    <section id="results" class="section two">
-      <div class="container grid-2">
-        <div>
-          <h2>Results</h2>
-          <ul class="bullets">
-            <li>Booking task success rate improved in usability tests</li>
-            <li>Significant reduction in confusion about gift certificates</li>
-            <li>Clearer, faster path to reservations on mobile</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Reflection</h2>
-          <p>Early, lightweight testing surfaced critical issues quickly. Iteration aligned user needs with business goals and informed a concise, scalable mobile pattern for future features.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container narrow">
-      <p>© 2025 Janelle — Case Study</p>
+  <!-- Case Study Hero Intro (title + subtitle) -->
+  <section class="ibts-case-section case-hero">
+  <div class="case-hero-grid">
+    <!-- left column -->
+    <div class="case-hero-left">
+      
+    <div class="img-placeholder">
+      <img src="assets/ibts_mobile_app_preview.jpg" alt="Competitive Analysis Graphic" />
     </div>
-  </footer>
+    <!-- right column -->
+    <div class="case-hero-right">
+      <h3>Crafting an experience that is intuitive, and engaging to help people succeed in their cozy vacation goals. ✨ </h3>
+      <p>Inns by the sea is a small hospitality company based in Carmel-by-the-Sea CA with 4 welcoming, warm, classic inns on the coast of California.  
+      In October, I joined the team as a Front Desk Agent, then was promoted to Reservations Specialist in January 2025. As I learned more about the clients, I noticed a few trends in booking; I am looking to promote the properties and resolve the issues clients have with their booking.</p>
+    </div>
+  </div>
+  </section>
+
+  <!-- Project Overview and Problem Statement -->
+  <section class="ibts-case-section">
+    <h2>Project Overview</h2>
+    <p>The IBTS Mobile App is a companion to the Inns by the Sea website, built to help travelers easily browse properties, check availability, and book stays directly from their phones. My role encompassed end-to-end product design, from initial discovery to hand-off of polished Figma assets.</p>
+    
+    <h2>Problem Statement</h2>
+    <p>Users visiting our analytics showed high drop-off on mobile: the desktop site wasn’t optimized for touch, search filters were buried, and our booking flow felt clunky on small screens. We needed a streamlined, mobile-first experience.</p>
+    <h3>How can we improve the overall customization and personal experiences of booking direct?</h3>
+    <ul>
+      <li>HMW improve the clarity, customization, and ease of booking directly through the app?</li>
+      <li>HMW make exclusive offerings like the Romance Package more discoverable and desirable?</li>
+      <li>HMW support returning guests by helping them remember and repeat past experiences they loved?</li>
+    </ul>
+  </section>
+
+  <!-- Process -->
+  <section class="ibts-case-section"><h2>Process🤝</h2>
+    <!-- <h3>User Research</h3>
+    <p>Conducted 5 user interviews and analyzed survey data to uncover pain points in our existing mobile flow.</p>
+    <p>In addressing the question, “How can we improve the overall customization and personal experiences of booking direct?”, our research identified significant gaps in the current guest booking journey. 
+     -->
+      <h3>Market Research</h3>
+    <div class="img-placeholder">
+      <img src="assets/competitve_analysis_ibts_mobile.png" alt="Competitive Analysis Graphic" />
+    </div>
+    <div class="img-placeholder">      
+      <img src="assets/pie_chart_ibts_mobile.png" alt="Pie Chart" />
+    </div>
+  </section>
+  <!-- User Personas -->
+  <section class="ibts-case-section key-findings">
+    <h3>Key Findings</h3>
+      <div class="quotes">
+        <div class="quote left">
+      Where can I purchase a gift certificate? I couldn’t find it anywhere on the website.
+        </div>
+        <div class="quote right">
+      I didn’t know you even had a Romance Package! I would’ve added it for our anniversary.
+        </div>
+        <div class="quote left">
+      Which room did I stay in last time? I loved it but can’t remember the name.
+        </div>
+        <section class="ibts-case-section user-personas">
+    <h3>User Personas</h3>
+        <div class="img-placeholder">
+      <img src="assets/persona1_lena_marco.png" alt="Lena & Marco"/>
+      </div>
+      <div class="img-placeholder">
+      <img src="assets/persona2_brenda_thomas.png" alt="Brenda & Thomas"/>
+        </div>
+     </section>
+        </div>
+  </section>
+
+<section class="ibts-case-section design-process">
+  <h2>Design: Framing the Experience</h2>
+
+  <div class="process">
+    <div class="step">
+        <li><strong>The app is…</strong> A thoughtfully designed booking tool that makes planning a stay easy and engaging</li>
+        <li>A showcase for the unique experiences offered by the inns, like the Romance Package and local partnerships</li>
+        <li>A personalized portal that remembers guest preferences and past bookings</li>
+        <li>A direct communication bridge between guest and property—no third-party confusion</li>
+    </div>
+    <div class="step">
+      <li><strong>The app is not…</strong>Just another generic hotel booking app</li>
+        <li>A property management tool for staff</li>
+        <li>A static listing of rooms with no visual storytelling or added value</li>
+        <li>A transactional interface lacking human warmth and intuitive navigation</li> 
+    </div>
+</section>
+
+  </section>
+<!-- Wireframes -->
+  <section class="ibts-case-section">
+    <h2>Flowmap</h2>
+    <p>Developed a flowmap for the user journey through the app.</p>
+    <div class="img-placeholder">
+      <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVIzN8V_U=/?embedMode=view_only_without_ui&moveToViewport=-335,953,2396,1179&embedId=560997034852" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+    </div>
+    <h2>Wireframes</h2>
+    <div class="img-placeholder">
+      <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVIp97HWI=/?embedMode=view_only_without_ui&moveToViewport=-2872,-1387,5743,2718&embedId=46083493330" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+    </div>
+    
+    </div>
+  </section>
+  <!-- UI Design -->
+  <section class="ibts-case-section">
+    <h3>UI Design</h3>
+    <div class="img-placeholder">
+      <img src="assets/miro_wireframe_hi-fi_ibts.png" alt="Miro Wireframe Screens"/>
+    </div>
+    <p>Translated wireframes into high-fidelity Figma mockups, introducing a cleaner visual hierarchy and coastal-inspired color palette.</p>
+    <div class="img-placeholder">
+      <img src="assets/ibts_product_screens_1st.png" alt="Wireframe Screens"/>
+    </div>
+  </section>
+
+  <!-- Final Designs -->
+  <section class="ibts-case-section">
+    <h2>Final Designs</h2>
+    <div class="img-placeholder">
+      <img src="assets/ibts-screens-light.png"alt="Final Product Screens Light Mode"/>
+    </div>
+    <div class="img-placeholder">
+      <img src="assets/ibts-screens-dark.png"alt="Final Product Screens Dark Mode"/>
+    </div>
+     <section class="ibts-case-section key-improvements">
+  <h2>Key Improvements</h2>
+  <ul class="improvement-list">
+    <li><strong>Increased header size:</strong> Improved contrast and visual hierarchy.</li>
+    <li><strong>Gift card graphic redesign:</strong> Enhanced readability and brand cohesion.</li>
+    <li><strong>Updated bottom icons:</strong> Aligned with brand colors (light blue & dark blue).</li>
+    <li><strong>Improved page contrast:</strong> Better visual clarity between different views.</li>
+    <li><strong>Added Dark Mode:</strong> Dark mode for accessibility and greater contrast with text.</li>
+
+  </ul>
+</section>
+<!-- Brand Design -->
+  <section class="ibts-case-section">
+    <h2>Brand Design</h2>
+    <div class="img-placeholder">
+      <img src="assets/brand_for_ibts_mobile.png" alt="Wireframe Screens"/>
+    </div>
+    </section>
+  </section>
+
+  <!-- Reflection & Learnings -->
+  <section class="ibts-case-section">
+    <h2>Conclusion Takeaways and Future Plans</h2>
+    <p>This project allowed me to lead the visual 
+      direction and create a high-fidelity mobile 
+      app concept for Inns by the Sea. Though 
+      development was not in scope, I treated 
+      the project with the same attention to detail 
+      as a live product—preparing a polished presentation with Figma layouts, 
+      component mockups, annotated UX wireframes, and brand designs reflecting
+       the location and hospitality focus.</p>
+       <p>My goal was to create a compelling visual narrative that aligned with
+         the brand’s identity while elevating its digital experience. This 
+         exercise strengthened my ability to clearly communicate design intent 
+         to non-design stakeholders and demonstrate how thoughtful UI design 
+         could enhance booking usability and brand consistency across properties.</p>
+  </section>
+</main>
+
+
+  <footer>
+  <div class="footer-intro">
+    <p>Thanks for stopping by, let's chat! 👋</p>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>CONTACT ME</h4>
+      <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h4>LET'S CONNECT</h4>
+      <p>
+        <a href="https://www.linkedin.com/in/janelle-lee-07a018371/">LinkedIn</a> |
+        <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank">Resume</a> 
+        <!-- <a href="#">Work</a> -->
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Janelle Weinert</p>
+    <p>Made with 💛 & ☕</p>
+  </div>
+</footer>
 
   <script>
-    // Optional: minimal reveal on scroll (kept super subtle for performance)
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:.1});
-    document.querySelectorAll('.section, .media, h1, h2, .meta').forEach(el=>io.observe(el));
-  </script>
+  // Fade-out transition on link click
+  document.querySelectorAll('a[href]').forEach(link => {
+    const url = new URL(link.href, window.location.href);
+    const isSameOrigin = url.origin === window.location.origin;
+
+    if (isSameOrigin && !url.href.includes('#')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location = this.href;
+        }, 400);
+      });
+    }
+  });
+
+  // Intersection observer for scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Navbar background transition on scroll
+  const nav = document.getElementById('main-nav');
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Force header fade-in on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header.ibts-header');
+  if (header) {
+    header.classList.add('visible');
+  }
+});
+
+ const zoomOverlay = document.getElementById("zoomOverlay");
+  const zoomedImg = document.getElementById("zoomedImg");
+
+  // Attach click to ALL images
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", () => {
+      zoomedImg.src = img.src;
+      zoomOverlay.classList.add("active");
+    });
+  });
+
+  // Close overlay when clicking background or image
+  zoomOverlay.addEventListener("click", () => {
+    zoomOverlay.classList.remove("active");
+  });
+
+  // Keyboard controls
+  document.addEventListener("keydown", (e) => {
+    if (zoomOverlay.classList.contains("active")) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        // Close on Esc
+        zoomOverlay.classList.remove("active");
+      }
+    }
+    });
+
+</script>
+
 </body>
 </html>
