@@ -7,15 +7,37 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div id="transition-wrapper" class="transition-wrapper"></div>
-  <nav id="main-nav">
-    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <!-- <a href="portfolio.html">Work</a> -->
-      <a href="about.html">About</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="site-brand" href="index.html">
+      <img src="assets/janelle_logo.png" alt="Janelle logo" />
+      <span>Janelle Lee</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-menu" role="menubar">
+      <div class="nav-primary" role="none">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about.html" role="menuitem">About</a>
+        <a href="ibts_mobile_app.html" role="menuitem">IBTS Mobile App</a>
+        <a href="ibts_desktop.html" aria-current="page" role="menuitem">IBTS Website Redesign</a>
+        <a href="campaign_case_study.html" role="menuitem">Campaign Case Study</a>
+      </div>
+      <div class="nav-secondary" role="none">
+        <h6>Contact</h6>
+        <div class="nav-secondary-links">
+          <a href="mailto:weinertjanelle@gmail.com" role="menuitem">Email</a>
+          <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener" role="menuitem">LinkedIn</a>
+          <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener" role="menuitem">Resume</a>
+        </div>
+      </div>
     </div>
   </nav>
+  <div class="nav-overlay" hidden></div>
+
+    <div id="transition-wrapper" class="transition-wrapper"></div>
   
    <!-- Image Zoom Overlay -->
   <div class="zoom-overlay" id="zoomOverlay">
@@ -138,88 +160,35 @@
     </div>
   </footer>
 
+  <script src="assets/site.js"></script>
   <script>
-  // Fade-out transition on link click
-  document.querySelectorAll('a[href]').forEach(link => {
-    const url = new URL(link.href, window.location.href);
-    const isSameOrigin = url.origin === window.location.origin;
+  document.addEventListener('DOMContentLoaded', () => {
+    const zoomOverlay = document.getElementById('zoomOverlay');
+    const zoomedImg = document.getElementById('zoomedImg');
 
-    if (isSameOrigin && !url.href.includes('#')) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-          window.location = this.href;
-        }, 400);
+    if (!zoomOverlay || !zoomedImg) return;
+
+    document.querySelectorAll('main img, .ibts-case-section img').forEach(img => {
+      img.addEventListener('click', () => {
+        zoomedImg.src = img.currentSrc || img.src;
+        zoomOverlay.classList.add('active');
       });
-    }
-  });
+    });
 
-  // Intersection observer for scroll animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    zoomOverlay.addEventListener('click', () => {
+      zoomOverlay.classList.remove('active');
+      zoomedImg.removeAttribute('src');
+    });
+
+    document.addEventListener('keydown', event => {
+      if (!zoomOverlay.classList.contains('active')) return;
+      if (event.key === 'Escape' || event.key === 'Esc') {
+        zoomOverlay.classList.remove('active');
+        zoomedImg.removeAttribute('src');
       }
     });
   });
-  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Navbar background transition on scroll
-  const nav = document.getElementById('main-nav');
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // Force header fade-in on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header.ibts-header');
-  if (header) {
-    header.classList.add('visible');
-  }
-});
-
- // Force header fade-in on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header-content');
-  if (header) {
-    header.classList.add('visible');
-  }
-});
-
-const zoomOverlay = document.getElementById("zoomOverlay");
-  const zoomedImg = document.getElementById("zoomedImg");
-
-  // Attach click to ALL images
-  document.querySelectorAll("img").forEach(img => {
-    img.addEventListener("click", () => {
-      zoomedImg.src = img.src;
-      zoomOverlay.classList.add("active");
-    });
-  });
-
-  // Close overlay when clicking background or image
-  zoomOverlay.addEventListener("click", () => {
-    zoomOverlay.classList.remove("active");
-  });
-
-  // Keyboard controls
-  document.addEventListener("keydown", (e) => {
-    if (zoomOverlay.classList.contains("active")) {
-      if (e.key === "Escape" || e.key === "Esc") {
-        // Close on Esc
-        zoomOverlay.classList.remove("active");
-      }
-    }
-    });
-</script>
+  </script>
 
 </body>
 </html>

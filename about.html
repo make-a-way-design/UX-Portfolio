@@ -7,15 +7,37 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div id="transition-wrapper" class="transition-wrapper"></div>
-  <nav id="main-nav">
-    <div class="logo"> <a href="index.html">Janelle Lee</a></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <!-- <a href="portfolio.html">Work</a> -->
-      <a href="about.html">About</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="site-brand" href="index.html">
+      <img src="assets/janelle_logo.png" alt="Janelle logo" />
+      <span>Janelle Lee</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-menu" role="menubar">
+      <div class="nav-primary" role="none">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="about.html" aria-current="page" role="menuitem">About</a>
+        <a href="ibts_mobile_app.html" role="menuitem">IBTS Mobile App</a>
+        <a href="ibts_desktop.html" role="menuitem">IBTS Website Redesign</a>
+        <a href="campaign_case_study.html" role="menuitem">Campaign Case Study</a>
+      </div>
+      <div class="nav-secondary" role="none">
+        <h6>Contact</h6>
+        <div class="nav-secondary-links">
+          <a href="mailto:weinertjanelle@gmail.com" role="menuitem">Email</a>
+          <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener" role="menuitem">LinkedIn</a>
+          <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener" role="menuitem">Resume</a>
+        </div>
+      </div>
     </div>
   </nav>
+  <div class="nav-overlay" hidden></div>
+
+    <div id="transition-wrapper" class="transition-wrapper"></div>
 
   <!-- <header class="about-header scroll-fade">
     <h1>About Me</h1>
@@ -148,39 +170,7 @@
 </footer>
 
   
-  <script>
-  // Fade-out transition on link click
-  document.querySelectorAll('a[href]').forEach(link => {
-    const url = new URL(link.href, window.location.href);
-    const isSameOrigin = url.origin === window.location.origin;
-
-    if (isSameOrigin && !url.href.includes('#')) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-          window.location = this.href;
-        }, 400);
-      });
-    }
-  });
-
-  // Intersection observer for scroll animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Navbar background transition on scroll
-  const nav = document.getElementById('main-nav');
-nav.classList.add('scrolled');
-</script>
+  <script src="assets/site.js"></script>
 
 </body>
 </html>
