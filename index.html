@@ -8,54 +8,44 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <div class="site-shell">
-    <nav class="site-nav" id="site-navigation" aria-label="Primary">
-      <button class="nav-toggle nav-close" type="button" aria-expanded="false" aria-label="Close navigation" aria-controls="site-navigation">
-        <span></span>
-      </button>
-      <a class="site-brand" href="index.html">
-        <img src="assets/janelle_logo.png" alt="Janelle Lee monogram" />
-        <span class="brand-text">
-          <span class="brand-title">Janelle Lee</span>
-          <span class="brand-role">Digital marketing &amp; UX designer</span>
-        </span>
-      </a>
-      <div class="nav-update">Update coming soon.</div>
-      <div class="nav-section">
-        <span class="nav-label">Work</span>
-        <div class="nav-links" role="menubar">
-          <a href="index.html" aria-current="page" role="menuitem">Home</a>
-          <a href="about.html" role="menuitem">About</a>
-          <a href="ibts_mobile_app.html" role="menuitem">IBTS Mobile App</a>
-          <a href="ibts_desktop.html" role="menuitem">IBTS Website Redesign</a>
-          <a href="campaign_case_study.html" role="menuitem">Campaign Case Study</a>
-        </div>
-      </div>
-      <div class="nav-section">
-        <span class="nav-label">Contact</span>
-        <div class="nav-links" role="menubar">
-          <a href="mailto:weinertjanelle@gmail.com" role="menuitem">Email<span class="nav-meta">Say hello</span></a>
-          <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener" role="menuitem">LinkedIn<span class="nav-meta">↗</span></a>
-          <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener" role="menuitem">Resume<span class="nav-meta">PDF</span></a>
-        </div>
-      </div>
-      <div class="nav-footer">
-        <span>Based in Carmel-by-the-Sea, CA</span>
-        <span>&copy; 2025 Janelle Weinert</span>
-      </div>
-    </nav>
-    <div class="site-main">
-      <header class="mobile-topbar">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation" aria-controls="site-navigation">
-          <span></span>
-        </button>
-        <span class="topbar-title">Janelle Lee</span>
-        <a class="topbar-link" href="mailto:weinertjanelle@gmail.com">Email</a>
-      </header>
+  <!-- Top Bar -->
+<div class="topbar">
+  <a class="brand-mini" href="index.html" aria-label="Home">
+    <img src="assets/janelle_logo.png" alt="Janelle logo" />
+    <span>Janelle Lee</span>
+  </a>
+  <button class="hamburger topbar-toggle" aria-label="Open menu"><span></span></button>
+</div>
 
-      <div id="transition-wrapper" class="transition-wrapper"></div>
+<!-- Transition wrapper and main nav -->
+  <div id="transition-wrapper" class="transition-wrapper"></div>
+  <nav id="main-nav">
+    <div class="brand">
+  <a href="index.html" class="logo">
+    <img src="assets/janelle_logo.png" alt="Janelle logo" />
+    <span class="brand-name">Janelle Lee</span>
+  </a>
 
-      <header class="header">
+  <!-- hamburger appears on mobile only -->
+  <button class="hamburger" aria-label="Open menu"><span></span></button>
+</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <!-- <a href="portfolio.html">Work</a> -->
+      <a href="about.html">About</a>
+      <div class="group">
+      <a href="ibts_mobile_app.html">IBTS Mobile App</a>
+      <a href="ibts_desktop.html">IBTS Website Redesign</a>
+  <h6>Contact</h6>
+  <a href="mailto:weinertjanelle@gmail.com">Email</a>
+  <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+</div>
+    </div>
+  </nav>
+
+  
+  <header class ="header scroll-fade">
   <video autoplay muted loop playsinline>
     <source src="assets/background.mp4" type="video/mp4" />
   </video>
