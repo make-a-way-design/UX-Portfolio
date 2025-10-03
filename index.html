@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Janelle Lee</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
   <!-- Top Bar -->
@@ -54,9 +54,7 @@
       
       <h2>Digital Marketing & UX Designer</h2>
       
-      <p></p>Currently working as a Reservations Specialist & Visual Designer
-      @ <strong>Inns by the Sea</strong> — leading a website redesign and building meaningful relationships with
-    guests along the way.</p>
+      <p>Currently working as a Reservations Specialist & Visual Designer at <strong>Inns by the Sea</strong> — leading a website redesign and building meaningful relationships with guests along the way.</p>
     
     <!-- <p> 🎓 Recent graduate from CSU Monterey Bay in <strong>Communication Design & Interactive Media.</strong></p> -->
   </div>
@@ -133,96 +131,10 @@
   </div>
 </footer>
 
+    </div>
+  </div>
+  <div class="nav-overlay" hidden></div>
 
-<script>
-  // Fade-out transition on link click
-  document.querySelectorAll('a[href]').forEach(link => {
-    const url = new URL(link.href, window.location.href);
-    const isSameOrigin = url.origin === window.location.origin;
-
-    if (isSameOrigin && !url.href.includes('#')) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-          window.location = this.href;
-        }, 400);
-      });
-    }
-  });
-
-  // Intersection observer for scroll animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-  document.querySelectorAll('.scroll-thumb, .scroll-fade').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Navbar background transition on scroll
-  const nav = document.getElementById('main-nav');
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > header.offsetHeight - nav.offsetHeight) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // Force header fade-in on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header-content');
-  if (header) {
-    header.classList.add('visible');
-  }
-});
-
-</script>
-<!-- backdrop for the mobile menu -->
-<div class="nav-scrim" hidden></div>
-
-<script>
-  // Run after DOM is ready (safe even if this appears early or late)
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.querySelector('.hamburger');
-    const scrim = document.querySelector('.nav-scrim');
-
-    function toggle(on) {
-      document.body.classList.toggle('nav-open', on);
-      if (scrim) scrim.hidden = !on; // show scrim only when menu is open
-    }
-
-    if (btn) btn.addEventListener('click', () => toggle(!document.body.classList.contains('nav-open')));
-    if (scrim) scrim.addEventListener('click', () => toggle(false));
-  });
-</script>
-
-<!-- backdrop for the mobile menu (keep this near the end of body) -->
-<div class="nav-scrim" hidden></div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.hamburger'); // supports topbar + any other
-    const scrim = document.querySelector('.nav-scrim');
-
-    function toggle(on) {
-      document.body.classList.toggle('nav-open', on);
-      if (scrim) scrim.hidden = !on;
-    }
-
-    buttons.forEach(btn => btn.addEventListener('click', () =>
-      toggle(!document.body.classList.contains('nav-open'))
-    ));
-    if (scrim) scrim.addEventListener('click', () => toggle(false));
-  });
-</script>
-
-
-
+  <script src="assets/site.js"></script>
 </body>
 </html>
