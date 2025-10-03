@@ -277,6 +277,110 @@ p{ color:#cbcbd2; }
 .case-study-header h2{ color:#a4b8ff; margin:0 0 6px; font-weight:600; }
 .case-study-header p{ color:#c9c9d2; }
 
+/* 5) CASE STUDY LAYOUT */
+.case-study-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+}
+
+.case-block{
+  background:var(--elev);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:32px clamp(24px, 4vw, 48px);
+  box-shadow:0 20px 55px rgba(0,0,0,.32);
+}
+
+.case-block__inner{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+.case-block__copy h4{
+  font-size:clamp(22px, 2.8vw, 30px);
+  margin:0 0 14px;
+  color:#f4f4f8;
+}
+
+.case-block__bullets{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:10px;
+  color:#d5d5de;
+}
+
+.case-block__bullets strong{
+  color:#f2f2f9;
+}
+
+.case-block__copy p,
+.case-block__copy li{
+  color:#cfcfd8;
+  font-size:1rem;
+}
+
+.stats{
+  margin-top:26px;
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.stat{
+  background:rgba(12,12,18,.82);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+}
+
+.stat strong{
+  font-size:1.45rem;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:#f8f8fb;
+}
+
+.stat span{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+.case-block__media{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.case-block__media figcaption{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+@media (min-width: 900px){
+  .case-block__inner{
+    flex-direction:row;
+    align-items:center;
+  }
+
+  .case-block:nth-of-type(even) .case-block__inner{
+    flex-direction:row-reverse;
+  }
+
+  .case-block__copy,
+  .case-block__media{
+    flex:1;
+  }
+}
+
 /* 6) SECTIONS / CARDS */
 .section{ padding:56px var(--pad); max-width:var(--page-max); margin:0 auto; }
 .card, .ibts-case-section{ background:var(--elev); border:1px solid var(--line); border-radius:14px; box-shadow: 0 12px 40px rgba(0,0,0,.30); padding:28px; max-width:var(--page-max); margin:24px auto; }
