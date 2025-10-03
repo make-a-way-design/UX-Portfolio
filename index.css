@@ -359,6 +359,197 @@ footer .footer-bottom{ display:flex; gap:20px; color:#8e8e96; }
 .scroll-fade.visible{ opacity:1; transform:translateY(0); }
 body.fade-out{ opacity:0; }
 
+
+/* 12.5) Homepage styles update */
+/* =============================================
+   HOMEPAGE "George Kim"–style section (scoped)
+   ============================================= */
+
+.home-v2{
+  --panel:#111318;
+  --text:#e6e7ea;
+  --muted:#a2a8b3;
+  --line:#1b1f26;
+  --chip-bg:#141823;
+  --chip-text:#cfd6ff;
+
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+  color: var(--text);
+}
+
+/* HERO */
+.home-v2 .kv{
+  display:grid;
+  grid-template-columns:96px 1fr;
+  gap:24px;
+  align-items:start;
+  padding:24px 0 32px;
+  border-bottom:1px solid var(--line);
+}
+.home-v2 .kv-avatar{
+  width:72px; height:72px; border-radius:50%;
+  object-fit:cover; margin-top:6px;
+  box-shadow:0 0 0 2px rgba(255,255,255,.06);
+}
+.home-v2 .kv-title{
+  font-size:clamp(18px,3.6vw,40px);
+  line-height:1.15; font-weight:800;
+  letter-spacing:-.01em; margin:0 0 12px;
+}
+.home-v2 .kv-sub{ color:var(--muted); margin:0 0 12px; }
+.home-v2 .kv-meta{
+  display:flex; flex-wrap:wrap; gap:8px 14px;
+  color:var(--muted); font-size:14px;
+}
+.home-v2 .kv-meta .kv-prev strong{ color:var(--text); }
+.home-v2 .kv-dot{ opacity:.35; }
+
+/* TEAM / EXPERIENCE (override any global .list) */
+.home-v2 .list{
+  display:block;
+  padding-top:24px;
+  margin-top:12px;
+}
+.home-v2 .list-heading{
+  color:var(--muted);
+  font-size:13px; font-weight:600;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin:18px 0;
+}
+.home-v2 .list-row{
+  display:grid;
+  grid-template-columns:1fr max-content;
+  align-items:center;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.home-v2 .list-row:first-of-type{ border-top:none; }
+.home-v2 .list-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+.home-v2 .list-chip{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:22px; padding:0 8px; border-radius:6px;
+  background:var(--chip-bg); color:var(--chip-text);
+  font-size:12px; font-weight:600;
+}
+.home-v2 .list-role{
+  color:var(--text); opacity:.9;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.home-v2 .list-right{
+  color:var(--muted);
+  font-variant-numeric:tabular-nums;
+  margin-left:16px;
+}
+
+
+/* Responsive */
+@media (max-width:700px){
+  .home-v2 .kv{ grid-template-columns:56px 1fr; gap:16px; }
+  .home-v2 .kv-avatar{ width:56px; height:56px; }
+  .home-v2 .list-row{ grid-template-columns:1fr auto; }
+}
+
+/* =============================================
+   Mobile Booking app page Styles Update
+   ============================================= */
+/* =============================================
+   PROJECT HEADER (scoped to .case-v2)
+   — mirrors .home-v2
+   ============================================= */
+
+.case-v2{
+  --panel:#111318;
+  --text:#e6e7ea;
+  --muted:#a2a8b3;
+  --line:#1b1f26;
+  --chip-bg:#141823;
+  --chip-text:#cfd6ff;
+
+  max-width: var(--page-max); /* align with your case sections */
+  margin: 0 auto;
+  padding: 48px 24px 0;       /* sits above main content */
+  color: var(--text);
+}
+
+/* KV hero (same structure as home) */
+.case-v2 .kv{
+  display:grid;
+  grid-template-columns: 1fr; /* no avatar column */
+  gap:24px;
+  align-items:start;
+  padding:24px 0 32px;
+  border-bottom:1px solid var(--line);
+}
+.case-v2 .kv-title{
+  font-size:clamp(24px,3.6vw,40px);
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-.01em;
+  margin:0 0 8px;
+}
+.case-v2 .kv-sub{
+  color:#cbd1ff;              /* subtle contrast to match home vibe */
+  margin:0 0 10px;
+  font-weight:600;
+}
+.case-v2 .kv-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  color:var(--muted);
+  font-size:14px;
+}
+.case-v2 .kv-dot{ opacity:.35; }
+
+/* Rows (same as homepage Team) */
+.case-v2 .list{
+  display:block !important;   /* beat any global .list grid */
+  padding-top:24px;
+  margin-top:12px;
+}
+.case-v2 .list-heading{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:18px 0;
+}
+.case-v2 .list-row{
+  display:grid;
+  grid-template-columns:1fr max-content;
+  align-items:center;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.case-v2 .list-row:first-of-type{ border-top:none; }
+.case-v2 .list-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+.case-v2 .list-chip{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:22px; padding:0 8px; border-radius:6px;
+  background:var(--chip-bg); color:var(--chip-text);
+  font-size:12px; font-weight:600;
+}
+.case-v2 .list-role{
+  color:var(--text); opacity:.9;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.case-v2 .list-right{
+  color:var(--muted);
+  font-variant-numeric:tabular-nums;
+  margin-left:16px;
+}
+
+
+/* Responsive — same breakpoints as home */
+@media (max-width:700px){
+  .case-v2{ padding: 36px 18px 0; }
+  .case-v2 .list-row{ grid-template-columns:1fr auto; }
+}
+
+
 /* 13) RESPONSIVE */
 @media (max-width: 1280px){
   :root{
@@ -444,6 +635,15 @@ body.fade-out{ opacity:0; }
   .nav-overlay{ display:none; }
   .nav-close{ display:none; }
 }
-
+/* IBTS case hero grid layout (two columns like a detail page) */
+.case-hero .case-hero-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+.case-hero-left, .case-hero-right{ min-width: 0; }
+@media (max-width: 900px){
+  .case-hero .case-hero-grid{ grid-template-columns: 1fr; }
+}
 
 
