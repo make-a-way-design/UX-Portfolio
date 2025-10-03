@@ -5,248 +5,266 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Janelle Lee</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <nav class="site-nav" aria-label="Primary">
-    <a class="site-brand" href="index.html">
-      <img src="assets/janelle_logo.png" alt="Janelle logo" />
-      <span>Janelle Lee</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="nav-menu" role="menubar">
-      <div class="nav-primary" role="none">
-        <a href="index.html" role="menuitem">Home</a>
-        <a href="about.html" role="menuitem">About</a>
-        <a href="ibts_mobile_app.html" role="menuitem">IBTS Mobile App</a>
-        <a href="ibts_desktop.html" role="menuitem">IBTS Website Redesign</a>
-        <a href="campaign_case_study.html" aria-current="page" role="menuitem">Campaign Case Study</a>
-      </div>
-      <div class="nav-secondary" role="none">
-        <h6>Contact</h6>
-        <div class="nav-secondary-links">
-          <a href="mailto:weinertjanelle@gmail.com" role="menuitem">Email</a>
-          <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener" role="menuitem">LinkedIn</a>
-          <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener" role="menuitem">Resume</a>
+  <div class="site-shell">
+    <nav class="site-nav" id="site-navigation" aria-label="Primary">
+      <button class="nav-toggle nav-close" type="button" aria-expanded="false" aria-label="Close navigation" aria-controls="site-navigation">
+        <span></span>
+      </button>
+      <a class="site-brand" href="index.html">
+        <img src="assets/janelle_logo.png" alt="Janelle Lee monogram" />
+        <span class="brand-text">
+          <span class="brand-title">Janelle Lee</span>
+          <span class="brand-role">Digital marketing &amp; UX designer</span>
+        </span>
+      </a>
+      <div class="nav-update">Update coming soon.</div>
+      <div class="nav-section">
+        <span class="nav-label">Work</span>
+        <div class="nav-links" role="menubar">
+          <a href="index.html" role="menuitem">Home</a>
+          <a href="about.html" role="menuitem">About</a>
+          <a href="ibts_mobile_app.html" role="menuitem">IBTS Mobile App</a>
+          <a href="ibts_desktop.html" role="menuitem">IBTS Website Redesign</a>
+          <a href="campaign_case_study.html" aria-current="page" role="menuitem">Campaign Case Study</a>
         </div>
       </div>
+      <div class="nav-section">
+        <span class="nav-label">Contact</span>
+        <div class="nav-links" role="menubar">
+          <a href="mailto:weinertjanelle@gmail.com" role="menuitem">Email<span class="nav-meta">Say hello</span></a>
+          <a href="https://www.linkedin.com/in/janelle-lee-07a018371" target="_blank" rel="noopener" role="menuitem">LinkedIn<span class="nav-meta">↗</span></a>
+          <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank" rel="noopener" role="menuitem">Resume<span class="nav-meta">PDF</span></a>
+        </div>
+      </div>
+      <div class="nav-footer">
+        <span>Based in Carmel-by-the-Sea, CA</span>
+        <span>&copy; 2025 Janelle Weinert</span>
+      </div>
+    </nav>
+    <div class="site-main">
+      <header class="mobile-topbar">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation" aria-controls="site-navigation">
+          <span></span>
+        </button>
+        <span class="topbar-title">Janelle Lee</span>
+        <a class="topbar-link" href="mailto:weinertjanelle@gmail.com">Email</a>
+      </header>
+
+      <div id="transition-wrapper" class="transition-wrapper"></div>
+      
+         <!-- Image Zoom Overlay -->
+        <div class="zoom-overlay" id="zoomOverlay">
+        <img src="" alt="Zoomed Image" id="zoomedImg">
+      </div>
+      
+        <header class="case-study-header scroll-fade">
+        <div class="header-overlay">
+          <h1>Email Campaign Case Study</h1>
+          <h2>Inns by the Sea</h2>
+          <p>Exploring the process: from wireframes and drafts to final email designs.</p>
+        </div>
+      </header>
+      
+        <main class="case-study-wrap">
+        <!-- Hero / Intro -->
+        <section class="case-study-hero scroll-fade">
+          <h1>Email Campaign Case Study</h1>
+          <h2>Inns by the Sea</h2>
+          <p>
+            A focused series of email marketing campaigns designed to drive weekend bookings and promote key offerings.
+            This case study highlights campaign objectives, creative iterations, and performance.
+          </p>
+          <span class="badge">Channel: Email Only</span>
+        </section>
+      
+        <!-- Strategy -->
+        <section class="case-study-section scroll-fade">
+          <h3>Strategy & Approach</h3>
+          <ul>
+            <li><strong>Objective:</strong> Increase direct bookings and package awareness through targeted emails.</li>
+            <li><strong>Segmentation:</strong> Recent visitors, seasonal travelers, and late summer bookings.</li>
+            <li><strong>Cadence:</strong> 1-2 sends per month.</li>
+            <li><strong>Creative System:</strong> Consistent templates with modular hero, offer, and CTA blocks.</li>
+            <li><strong>Metrics Tracked:</strong> Open Rate, CTR, Conversion Rate, Revenue per Send.</li>
+          </ul>
+        </section>
+      
+        <!-- Campaign 1 -->
+        <article class="campaign email-campaign scroll-fade" data-campaign="romantic-getaway">
+          <h4>Splash Sale</h4>
+          <ul>
+            <li><strong>Subject Line:</strong> 48-Hour Splash Sale!</li>
+            <li><strong>CTA:</strong> Last minute offer! Save 30%</li>
+          </ul>
+      
+          <!-- Performance stats -->
+          <div class="stats">
+        <div class="stat"><strong>22.4%</strong><span>Open Rate</span></div>
+        <div class="stat"><strong>0.63%</strong><span>Click-Through</span></div>
+        <div class="stat"><strong>263</strong><span>Nights Booked</span></div>
+        <div class="stat"><strong>$0.35</strong><span>Revenue / Send</span></div>
+        </div>
+      
+      
+          <!-- Design progression gallery -->
+          <div class="design-progress">
+            <!-- <div class="design-stage">
+              <h5>Wireframe</h5>
+              <img src="assets/email-romantic-wireframe.jpg" alt="Romantic Getaway Email Wireframe">
+            </div>
+            <div class="design-stage">
+              <h5>Draft</h5>
+              <img src="assets/email-romantic-draft.jpg" alt="Romantic Getaway Email Draft">
+            </div> -->
+            <div class="design-stage">
+              <h5>Final Design</h5>
+              <img src="assets/email-splash-sale.jpg" alt="Splash Sale Final Email Design">
+            </div>
+          </div>
+        </article>
+      
+        <!-- Campaign 2 Summer Story -->
+        <article class="campaign email-campaign scroll-fade" data-campaign="seasonal-getaway">
+          <h4>Spring is in the Air / Spring Breeze</h4>
+          <ul>
+            <li><strong>Subject Line:</strong> Your Coastal Escape Awaits</li>
+            <li><strong>CTA:</strong> Stay and enjoy the spring breeze.</li>
+          </ul>
+      
+          <div class="stats">
+        <div class="stat"><strong>24.8%</strong><span>Open Rate</span></div>
+        <div class="stat"><strong>0.58%</strong><span>Click-Through</span></div>
+        <div class="stat"><strong>331</strong><span>Nights Booked</span></div>
+        <div class="stat"><strong>$0.39</strong><span>Revenue / Send</span></div>
+        </div>
+      
+          <div class="design-progress">
+            <!-- <div class="design-stage">
+              <h5>Wireframe</h5>
+              <img src="assets/email-seasonal-wireframe.jpg" alt="Seasonal Getaway Email Wireframe">
+            </div> -->
+            <div class="design-stage">
+              <h5>1st email 3/17</h5>
+              <img src="assets/spring-breeze-bridge.jpg" alt="Seasonal Getaway Email Draft">
+            </div>
+            <!-- <div class="design-stage">
+              <h5>2nd email sent 3/19</h5>
+              <img src="assets/spring-is-in-the-air.jpg" alt="Seasonal Getaway Final Email Design">
+            </div> -->
+          </div>
+        </article>
+      
+        <!-- Campaign 3 -->
+        <article class="campaign email-campaign scroll-fade" data-campaign="gift-certificates">
+          <h4>Summer Story</h4>
+          <ul>
+            <li><strong>Subject Line:</strong> Book your Summer Story</li>
+            <li><strong>CTA:</strong> Be the Main Character</li>
+          </ul>
+      
+          <div class="stats">
+            <div class="stat"><strong>23.7%</strong><span>Open Rate</span></div>
+            <div class="stat"><strong>0.54%</strong><span>Click-Through</span></div>
+            <div class="stat"><strong>298</strong><span>Nights Booked</span></div>
+            <div class="stat"><strong>$0.21</strong><span>Revenue / Send</span></div>
+          </div>
+      
+          <div class="design-progress">
+            <!-- <div class="design-stage">
+              <h5>Wireframe</h5>
+              <img src="assets/email-gift-wireframe.jpg" alt="Gift Certificate Email Wireframe">
+            </div>
+            <div class="design-stage">
+              <h5>Draft</h5>
+              <img src="assets/email-gift-draft.jpg" alt="Gift Certificate Email Draft">
+            </div> -->
+            <div class="design-stage">
+              <h5>Final</h5>
+              <img src="assets/summer-story-promo.png" alt="Summer Story Final Email Design">
+            </div>
+          </div>
+        </article>
+      
+        <!-- Summary -->
+        <section class="case-study-section scroll-fade">
+          <h3>Performance Overview</h3>
+          <p>These values will be updated once final campaign data is available.</p>
+            <div class="stats">
+              <div class="stat"><strong>25.2%</strong><span>Open Rate</span></div>
+              <div class="stat"><strong>0.57%</strong><span>Click-Through</span></div>
+              <div class="stat"><strong>2,241</strong><span>Nights Booked</span></div>
+              <div class="stat"><strong>$887,716</strong><span>Total Revenue</span></div>
+      </div>
+        </section>
+      </main>
+      
+      
+      
+      
+      <footer>
+        <div class="footer-intro">
+          <p>Thanks for stopping by, let's chat! 👋</p>
+        </div>
+      
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>CONTACT ME</h4>
+            <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>LET'S CONNECT</h4>
+            <p>
+              <a href="https://www.linkedin.com/in/janelle-lee-07a018371/">LinkedIn</a> |
+              <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank">Resume</a> 
+              <!-- <a href="#">Work</a> -->
+            </p>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 Janelle Weinert</p>
+          <p>Made with 💛 & ☕</p>
+        </div>
+      </footer>
     </div>
-  </nav>
+  </div>
   <div class="nav-overlay" hidden></div>
 
-  <div id="transition-wrapper" class="transition-wrapper"></div>
-
-   <!-- Image Zoom Overlay -->
-  <div class="zoom-overlay" id="zoomOverlay">
-  <img src="" alt="Zoomed Image" id="zoomedImg">
-</div>
-
-  <header class="case-study-header scroll-fade">
-  <div class="header-overlay">
-    <h1>Email Campaign Case Study</h1>
-    <h2>Inns by the Sea</h2>
-    <p>Exploring the process: from wireframes and drafts to final email designs.</p>
-  </div>
-</header>
-
-  <main class="case-study-wrap">
-  <!-- Hero / Intro -->
-  <section class="case-study-hero scroll-fade">
-    <h1>Email Campaign Case Study</h1>
-    <h2>Inns by the Sea</h2>
-    <p>
-      A focused series of email marketing campaigns designed to drive weekend bookings and promote key offerings.
-      This case study highlights campaign objectives, creative iterations, and performance.
-    </p>
-    <span class="badge">Channel: Email Only</span>
-  </section>
-
-  <!-- Strategy -->
-  <section class="case-study-section scroll-fade">
-    <h3>Strategy & Approach</h3>
-    <ul>
-      <li><strong>Objective:</strong> Increase direct bookings and package awareness through targeted emails.</li>
-      <li><strong>Segmentation:</strong> Recent visitors, seasonal travelers, and late summer bookings.</li>
-      <li><strong>Cadence:</strong> 1-2 sends per month.</li>
-      <li><strong>Creative System:</strong> Consistent templates with modular hero, offer, and CTA blocks.</li>
-      <li><strong>Metrics Tracked:</strong> Open Rate, CTR, Conversion Rate, Revenue per Send.</li>
-    </ul>
-  </section>
-
-  <!-- Campaign 1 -->
-  <article class="campaign email-campaign scroll-fade" data-campaign="romantic-getaway">
-    <h4>Splash Sale</h4>
-    <ul>
-      <li><strong>Subject Line:</strong> 48-Hour Splash Sale!</li>
-      <li><strong>CTA:</strong> Last minute offer! Save 30%</li>
-    </ul>
-
-    <!-- Performance stats -->
-    <div class="stats">
-  <div class="stat"><strong>22.4%</strong><span>Open Rate</span></div>
-  <div class="stat"><strong>0.63%</strong><span>Click-Through</span></div>
-  <div class="stat"><strong>263</strong><span>Nights Booked</span></div>
-  <div class="stat"><strong>$0.35</strong><span>Revenue / Send</span></div>
-  </div>
-
-
-    <!-- Design progression gallery -->
-    <div class="design-progress">
-      <!-- <div class="design-stage">
-        <h5>Wireframe</h5>
-        <img src="assets/email-romantic-wireframe.jpg" alt="Romantic Getaway Email Wireframe">
-      </div>
-      <div class="design-stage">
-        <h5>Draft</h5>
-        <img src="assets/email-romantic-draft.jpg" alt="Romantic Getaway Email Draft">
-      </div> -->
-      <div class="design-stage">
-        <h5>Final Design</h5>
-        <img src="assets/email-splash-sale.jpg" alt="Splash Sale Final Email Design">
-      </div>
-    </div>
-  </article>
-
-  <!-- Campaign 2 Summer Story -->
-  <article class="campaign email-campaign scroll-fade" data-campaign="seasonal-getaway">
-    <h4>Spring is in the Air / Spring Breeze</h4>
-    <ul>
-      <li><strong>Subject Line:</strong> Your Coastal Escape Awaits</li>
-      <li><strong>CTA:</strong> Stay and enjoy the spring breeze.</li>
-    </ul>
-
-    <div class="stats">
-  <div class="stat"><strong>24.8%</strong><span>Open Rate</span></div>
-  <div class="stat"><strong>0.58%</strong><span>Click-Through</span></div>
-  <div class="stat"><strong>331</strong><span>Nights Booked</span></div>
-  <div class="stat"><strong>$0.39</strong><span>Revenue / Send</span></div>
-  </div>
-
-    <div class="design-progress">
-      <!-- <div class="design-stage">
-        <h5>Wireframe</h5>
-        <img src="assets/email-seasonal-wireframe.jpg" alt="Seasonal Getaway Email Wireframe">
-      </div> -->
-      <div class="design-stage">
-        <h5>1st email 3/17</h5>
-        <img src="assets/spring-breeze-bridge.jpg" alt="Seasonal Getaway Email Draft">
-      </div>
-      <!-- <div class="design-stage">
-        <h5>2nd email sent 3/19</h5>
-        <img src="assets/spring-is-in-the-air.jpg" alt="Seasonal Getaway Final Email Design">
-      </div> -->
-    </div>
-  </article>
-
-  <!-- Campaign 3 -->
-  <article class="campaign email-campaign scroll-fade" data-campaign="gift-certificates">
-    <h4>Summer Story</h4>
-    <ul>
-      <li><strong>Subject Line:</strong> Book your Summer Story</li>
-      <li><strong>CTA:</strong> Be the Main Character</li>
-    </ul>
-
-    <div class="stats">
-      <div class="stat"><strong>23.7%</strong><span>Open Rate</span></div>
-      <div class="stat"><strong>0.54%</strong><span>Click-Through</span></div>
-      <div class="stat"><strong>298</strong><span>Nights Booked</span></div>
-      <div class="stat"><strong>$0.21</strong><span>Revenue / Send</span></div>
-    </div>
-
-    <div class="design-progress">
-      <!-- <div class="design-stage">
-        <h5>Wireframe</h5>
-        <img src="assets/email-gift-wireframe.jpg" alt="Gift Certificate Email Wireframe">
-      </div>
-      <div class="design-stage">
-        <h5>Draft</h5>
-        <img src="assets/email-gift-draft.jpg" alt="Gift Certificate Email Draft">
-      </div> -->
-      <div class="design-stage">
-        <h5>Final</h5>
-        <img src="assets/summer-story-promo.png" alt="Summer Story Final Email Design">
-      </div>
-    </div>
-  </article>
-
-  <!-- Summary -->
-  <section class="case-study-section scroll-fade">
-    <h3>Performance Overview</h3>
-    <p>These values will be updated once final campaign data is available.</p>
-      <div class="stats">
-        <div class="stat"><strong>25.2%</strong><span>Open Rate</span></div>
-        <div class="stat"><strong>0.57%</strong><span>Click-Through</span></div>
-        <div class="stat"><strong>2,241</strong><span>Nights Booked</span></div>
-        <div class="stat"><strong>$887,716</strong><span>Total Revenue</span></div>
-</div>
-  </section>
-</main>
-
-
-
-
-<footer>
-  <div class="footer-intro">
-    <p>Thanks for stopping by, let's chat! 👋</p>
-  </div>
-
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>CONTACT ME</h4>
-      <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
-    </div>
-
-    <div class="footer-section">
-      <h4>LET'S CONNECT</h4>
-      <p>
-        <a href="https://www.linkedin.com/in/janelle-lee-07a018371/">LinkedIn</a> |
-        <a href="https://drive.google.com/file/d/1u0_DBDrEEicJI_XaIHcp30sGjKQX3RE1/view?usp=sharing" target="_blank">Resume</a> 
-        <!-- <a href="#">Work</a> -->
-      </p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Janelle Weinert</p>
-    <p>Made with 💛 & ☕</p>
-  </div>
-</footer>
-
-
-<script src="assets/site.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const zoomOverlay = document.getElementById('zoomOverlay');
-    const zoomedImg = document.getElementById('zoomedImg');
-
-    if (!zoomOverlay || !zoomedImg) return;
-
-    document.querySelectorAll('main img').forEach(img => {
-      img.addEventListener('click', () => {
-        zoomedImg.src = img.currentSrc || img.src;
-        zoomOverlay.classList.add('active');
+  <script src="assets/site.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const zoomOverlay = document.getElementById('zoomOverlay');
+      const zoomedImg = document.getElementById('zoomedImg');
+  
+      if (!zoomOverlay || !zoomedImg) return;
+  
+      document.querySelectorAll('main img').forEach(img => {
+        img.addEventListener('click', () => {
+          zoomedImg.src = img.currentSrc || img.src;
+          zoomOverlay.classList.add('active');
+        });
       });
-    });
-
-    zoomOverlay.addEventListener('click', () => {
-      zoomOverlay.classList.remove('active');
-      zoomedImg.removeAttribute('src');
-    });
-
-    document.addEventListener('keydown', event => {
-      if (!zoomOverlay.classList.contains('active')) return;
-      if (event.key === 'Escape' || event.key === 'Esc') {
+  
+      zoomOverlay.addEventListener('click', () => {
         zoomOverlay.classList.remove('active');
         zoomedImg.removeAttribute('src');
-      }
+      });
+  
+      document.addEventListener('keydown', event => {
+        if (!zoomOverlay.classList.contains('active')) return;
+        if (event.key === 'Escape' || event.key === 'Esc') {
+          zoomOverlay.classList.remove('active');
+          zoomedImg.removeAttribute('src');
+        }
+      });
     });
-  });
-</script>
-
-
-</body>
-</html>
+  </script>
+  
+  
+  </body>
+  </html>
+  

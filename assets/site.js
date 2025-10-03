@@ -1,28 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.site-nav');
-  const navMenu = document.querySelector('.nav-menu');
   const navOverlay = document.querySelector('.nav-overlay');
   const navToggles = document.querySelectorAll('.nav-toggle');
 
-  const updateNavSurface = () => {
-    if (!nav) return;
-    const threshold = 48;
-    if (window.scrollY > threshold) {
-      nav.classList.add('is-solid');
-    } else {
-      nav.classList.remove('is-solid');
-    }
-  };
+  const MOBILE_BREAKPOINT = 960;
 
   const setNav = (open) => {
     const shouldOpen = Boolean(open);
     document.body.classList.toggle('nav-open', shouldOpen);
     navToggles.forEach(btn => btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false'));
-    if (navOverlay) navOverlay.hidden = !shouldOpen;
-    if (shouldOpen) {
-      nav?.classList.add('is-solid');
-    } else {
-      updateNavSurface();
+    if (navOverlay) {
+      navOverlay.hidden = !shouldOpen;
     }
   };
 
@@ -35,15 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.addEventListener('click', () => setNav(false));
   }
 
-  if (navMenu) {
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 860) {
-          setNav(false);
-        }
-      });
+  nav?.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= MOBILE_BREAKPOINT) {
+        setNav(false);
+      }
     });
-  }
+  });
 
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && document.body.classList.contains('nav-open')) {
@@ -52,14 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 860) {
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
       setNav(false);
+      if (navOverlay) {
+        navOverlay.hidden = true;
+      }
     }
-    updateNavSurface();
   });
-
-  updateNavSurface();
-  window.addEventListener('scroll', updateNavSurface, { passive: true });
 
   document.body.classList.add('js-enabled');
 
