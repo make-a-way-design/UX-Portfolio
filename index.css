@@ -556,8 +556,80 @@ body.fade-out{ opacity:0; }
 }
 
 /* =============================================
-   Mobile Booking app page Styles Update
+   Mobile Booking app page App hero (media-first)
    ============================================= */
+
+.case-hero{
+  max-width:var(--page-max);
+  margin:0 auto;
+  padding:clamp(48px, 7vw, 96px) clamp(24px, 7vw, 64px) 0;
+}
+
+.case-hero--media-only{
+  padding-bottom:clamp(18px, 6vw, 32px);
+}
+
+.case-hero__image{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.case-hero-copy{
+  max-width:var(--page-max);
+  margin:0 auto;
+  padding:0 clamp(24px, 7vw, 64px) clamp(56px, 7vw, 96px);
+}
+
+.case-hero-copy__inner{
+  max-width:640px;
+}
+
+.case-hero-copy__title{
+  font-size:clamp(26px, 4vw, 44px);
+  line-height:1.12;
+  font-weight:800;
+  letter-spacing:-0.01em;
+  margin:0 0 10px;
+}
+
+.case-hero-copy__subtitle{
+  margin:0 0 16px;
+  font-weight:600;
+  color:#cbd1ff;
+}
+
+.case-hero-copy__summary{
+  margin:0 0 22px;
+  font-size:1.05rem;
+  color:var(--muted);
+}
+
+.case-hero-copy__meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+.case-hero-copy__dot{ opacity:.35; }
+
+@media (max-width:700px){
+  .case-hero{
+    padding:clamp(32px, 9vw, 48px) clamp(18px, 7vw, 28px) 0;
+  }
+
+  .case-hero-copy{
+    padding:0 clamp(18px, 7vw, 28px) clamp(40px, 10vw, 60px);
+  }
+
+  .case-hero-copy__summary{
+    font-size:1rem;
+  }
+}
+
 /* =============================================
    PROJECT HEADER (scoped to .case-v2)
    — mirrors .home-v2
@@ -573,18 +645,27 @@ body.fade-out{ opacity:0; }
 
   max-width: var(--page-max); /* align with your case sections */
   margin: 0 auto;
-  padding: 48px 24px 0;       /* sits above main content */
-  color: var(--text);
+   padding: clamp(48px, 6vw, 82px) clamp(24px, 6vw, 64px) 0;
+   color: var(--text);
 }
 
 /* KV hero (same structure as home) */
 .case-v2 .kv{
   display:grid;
-  grid-template-columns: 1fr; /* no avatar column */
-  gap:24px;
+  grid-template-columns:minmax(0, 1fr);
+  gap:clamp(24px, 5vw, 40px);
   align-items:start;
-  padding:24px 0 32px;
-  border-bottom:1px solid var(--line);
+  padding:clamp(32px, 6vw, 64px) 0 clamp(36px, 6vw, 72px);
+  border-bottom:none;
+}
+.case-v2 .kv-copy{ max-width:640px; }
+.case-v2 .kv-media{
+  display:flex;
+  justify-content:center;
+}
+.case-v2 .kv-media img{
+  width:min(520px, 100%);
+  height:auto;
 }
 .case-v2 .kv-title{
   font-size:clamp(24px,3.6vw,40px);
@@ -649,10 +730,16 @@ body.fade-out{ opacity:0; }
 
 /* Responsive — same breakpoints as home */
 @media (max-width:700px){
-  .case-v2{ padding: 36px 18px 0; }
-  .case-v2 .list-row{ grid-template-columns:1fr auto; }
+.case-v2{ padding: 36px clamp(18px, 7vw, 28px) 0; }
+  .case-v2 .kv{ padding: clamp(26px, 7vw, 38px) 0 clamp(32px, 7vw, 48px); }
+   .case-v2 .list-row{ grid-template-columns:1fr auto; }
 }
-
+@media (min-width:900px){
+  .case-v2 .kv{
+    grid-template-columns:minmax(0, 1.05fr) minmax(280px, 420px);
+  }
+  .case-v2 .kv-copy{ max-width:560px; }
+}
 
 /* 13) RESPONSIVE */
 @media (max-width: 1280px){
