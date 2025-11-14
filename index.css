@@ -588,7 +588,6 @@ body.fade-out{ opacity:0; }
 .case-hero-copy__title{
   font-size:clamp(26px, 4vw, 44px);
   line-height:1.12;
-  font-weight:800;
   letter-spacing:-0.01em;
   margin:0 0 10px;
 }
@@ -670,7 +669,6 @@ body.fade-out{ opacity:0; }
 .case-v2 .kv-title{
   font-size:clamp(24px,3.6vw,40px);
   line-height:1.15;
-  font-weight:800;
   letter-spacing:-.01em;
   margin:0 0 8px;
 }
