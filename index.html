@@ -196,13 +196,49 @@
     </div>
 
     <footer>
-      <div class="footer-intro">
-        <p>Thanks for stopping by, let's connect! 👋</p>
-      </div>
       <div class="footer-content">
         <div class="footer-section">
-          <h4>CONTACT ME</h4>
-          <p><a href="mailto:weinertjanelle@gmail.com">weinertjanelle@gmail.com</a></p>
+           <footer>
+        <div class="footer-intro">
+          <p>Thanks for stopping by, let's connect! 👋</p>
+        </div>
+        <div class="footer-content">
+          <div class="footer-section">
+            <section class="contact-form-wrap">
+  <h4 class="contact-form-heading">HAVE A PROJECT IN MIND?</h4>
+  <!-- <p class="contact-form-subtext">Have a project in mind? Send a note and I'll get back to you.</p> -->
+
+  <form 
+    action="https://formspree.io/f/xdaqnwkr" 
+    method="POST" 
+    class="contact-form"
+  >
+    <!-- Honeypot field — invisible to humans, catches spam bots -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <!-- Redirect after submit — optional, remove if you'd rather show inline confirmation -->
+    <!-- <input type="hidden" name="_next" value="https://janellee.com/thanks.html"> -->
+
+    <!-- Custom email subject line -->
+    <input type="hidden" name="_subject" value="New message from janellee.com">
+
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-row">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="contact-submit-btn">Send Message</button>
+  </form>
         </div>
         <div class="footer-section">
           <h4>LET'S CONNECT</h4>
